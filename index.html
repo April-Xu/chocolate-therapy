@@ -3,18 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Chocolate Therapy</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <script  type="text/javascript"  src="js/index.js"></script>
+    <style>* {padding: 0; margin: 0}</style>
     <script src="js/pixi.min.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-    let type = "WebGL"
+    //Get webgl support
+    let type = "WebGL";
     if(!PIXI.utils.isWebGLSupported()){
         type = "canvas"
     }
+    PIXI.utils.sayHello(type);
 
-    PIXI.utils.sayHello(type)
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#6b432d", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    //Add text
+    let title = new PIXI.Text("Chocolate Therapy");
+    let subtitle = new PIXI.Text("Life is like a box of chocolates.You never know what you're gonna get.—— Forrest gump");
+    let start = new PIXI.Text("CLICK TO TASTE YOUR LIFE");
+    title.style = {
+        fontFamily: "Arial",
+        fontSize: 50,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    };
+    title.position.set(app.renderer.view.width/10, app.renderer.view.height/5);
+    subtitle.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "#6b432d",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    };
+    subtitle.position.set(app.renderer.view.width/10, app.renderer.view.height/5+80);
+    start.style = {
+        fontFamily: "Arial",
+        fontSize: 30,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width-20,
+    };
+    start.position.set(app.renderer.view.width/5*3, app.renderer.view.height/3*2);
+
+    //Add click function to start text
+    start.buttonMode = true;
+    start.interactive = true;
+    start.on('click', gotoIntro);
+    function gotoIntro() {
+        window.location.href="intro.html";
+    }
+
+    //Render text
+    app.stage.addChild(title, subtitle, start);
+
+
 </script>
 </body>
 </html>

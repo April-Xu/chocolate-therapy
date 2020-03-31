@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chocolate Therapy</title>
+    <style>* {padding: 0; margin: 0}</style>
+    <script src="js/pixi.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    //Get webgl support
+    let type = "WebGL";
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+    PIXI.utils.sayHello(type);
+
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#6b432d", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    //Add introductory text
+    var message = "Hi, we're the Outsiders.\n\n\n" +
+        "You've been accidentally sucked into a black hole and lost all your emotions.\n\n\n" +
+        "Fortunately, you met us, the only residents living in the black hole without losing our minds - because we have chocolates! \n\n\n" +
+        "Now, we will guide you through several experiences of eating different emotion chocolates to get your emotions backBtn.\n\n\n" +
+        "Try to shave the giant chocolate, get the emotion slices, and feed yourself in a right way.\n\n\n" +
+        "Good luck. We hope you will enjoy it, well, after you have the feeling of joy.";
+    let intro = new PIXI.Text();
+    intro.style = {
+        fontFamily: "Arial",
+        fontSize: 22,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    };
+    intro.text = message;
+    intro.position.set(app.renderer.view.width/10, app.renderer.view.height/7);
+
+    //Render text
+    app.stage.addChild(intro);
+
+    //Todo: Text effect
+//    window.οnlοad=function(){
+//        var i = 0;
+//        var length = message.length;
+//        setInterval(function(){
+//            intro.text=message.substring(i, i+1);
+//            app.stage.addChild(intro);
+//            i++;
+//            if(i==length){
+//                clearInterval(timer);
+//            }
+//        },200);
+//    }
+
+    //add continueBtn
+    let continueBtn = new PIXI.Graphics();
+    continueBtn.beginFill(0x6b432d);
+    //Use `drawPolygon` to define the continueBtn as
+    //a path array of x/y positions
+    continueBtn.drawPolygon([
+        0, 0,             //First point
+        0, 64,              //Second point
+        50, 32                 //Third point
+    ]);
+    //Fill shape's color
+    continueBtn.endFill();
+    //Position the continueBtn after you've drawn it.
+    //The continueBtn's x/y position is anchored to its first point in the path
+    continueBtn.x = app.renderer.view.width/5*4;
+    continueBtn.y = app.renderer.view.height/4*3;
+
+    //add backBtn
+    let backBtn = new PIXI.Text("BACK");
+    backBtn.style = {
+        fontFamily: "Arial",
+        fontSize: 30,
+        fill: "gray",
+    }
+    backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+
+    //Add interactivity
+    continueBtn.buttonMode = true;
+    continueBtn.interactive = true;
+    backBtn.buttonMode = true;
+    backBtn.interactive = true;
+    continueBtn.on('click', gotoMenu);
+    backBtn.on('click', goBack);
+    function gotoMenu() {
+        window.location.href="menu.html";
+    }
+    function goBack() {
+        window.location.href="index.html";
+    }
+
+    //render buttons
+    app.stage.addChild(continueBtn, backBtn);
+
+
+</script>
+</body>
+</html>

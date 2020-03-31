@@ -3,10 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Chocolate Therapy</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <script  type="text/javascript"  src="js/index.js"></script>
+    <style>* {padding: 0; margin: 0}</style>
+    <script src="js/pixi.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    //Get webgl support
+    let type = "WebGL";
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+    PIXI.utils.sayHello(type);
 
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#6b432d", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    //Add chocolate box
+    var levelName=["Joy", "Joy", "Joy", "Joy",
+        "Joy", "Joy", "Joy", "Joy",
+        "Joy", "Joy", "Joy", "Joy",
+        "Joy", "Joy", "Joy", "Joy"]
+    for (var i=0; i<4;i++) {
+        for (var j=0; j<4; j++) {
+            let rectangle = new PIXI.Graphics();
+            let level = new PIXI.Text(levelName[i+j*4]);
+            rectangle.lineStyle(4, 0xFFFFFF, 1);
+            rectangle.drawRect(0, 0, 150, 150);
+            rectangle.endFill();
+            rectangle.x = app.renderer.view.width/4+i*150;
+            rectangle.y = app.renderer.view.height/10+j*150;
+            level.style = {
+                fontFamily: "Arial",
+                fontSize: 50,
+                fill: "#6b432d" darken brown"#673729",
+            };
+            level.position.set(app.renderer.view.width/4+i*150+30,
+                app.renderer.view.height/10+j*150+50);
+            level.buttonMode = true;
+            level.interactive = true;
+            level.on('click', gotoLevel);  //need to change
+            app.stage.addChild(rectangle, level);
+        }
+    }
+
+    //Todo: add individual function
+//    function gotoLevel(name) {
+//        window.location.href=name+".html";
+//    }
+
+    //add gotolevel function
+    function gotoLevel() {
+        window.location.href="Joy.html";
+    }
+
+    //add back
+    let backBtn = new PIXI.Text("BACK");
+    backBtn.style = {
+        fontFamily: "Arial",
+        fontSize: 30,
+        fill: "gray",
+    }
+    backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+    backBtn.buttonMode = true;
+    backBtn.interactive = true;
+    backBtn.on('click', goBack);
+    function goBack() {
+        window.location.href="intro.html";
+    }
+    app.stage.addChild(backBtn);
+</script>
 </body>
 </html>
