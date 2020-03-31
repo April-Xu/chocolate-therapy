@@ -76,6 +76,12 @@
     //The continueBtn's x/y position is anchored to its first point in the path
     continueBtn.x = app.renderer.view.width/5*4;
     continueBtn.y = app.renderer.view.height/4*3;
+    continueBtn.buttonMode = true;
+    continueBtn.interactive = true;
+    continueBtn.on('click', gotoMenu);
+    function gotoMenu() {
+        window.location.href="menu.html";
+    }
 
     //add backBtn
     let backBtn = new PIXI.Text("BACK");
@@ -85,17 +91,9 @@
         fill: "gray",
     }
     backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
-
-    //Add interactivity
-    continueBtn.buttonMode = true;
-    continueBtn.interactive = true;
     backBtn.buttonMode = true;
     backBtn.interactive = true;
-    continueBtn.on('click', gotoMenu);
     backBtn.on('click', goBack);
-    function gotoMenu() {
-        window.location.href="menu.html";
-    }
     function goBack() {
         window.location.href="index.html";
     }

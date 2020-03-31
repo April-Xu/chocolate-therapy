@@ -113,21 +113,90 @@
 
     //detect end
     update = setInterval(function(){
-        if (count==3) {
+        if (count==5) {
+            clearInterval(update);
             // pause interaction
             chocolate.buttonMode = false;
             chocolate.interactive = false;
             //draw end screen
             setTimeout(function(){
+                //get image
+                const image = app.renderer.plugins.extract.base64(app.stage);
                 //draw mask
                 let mask = new PIXI.Graphics();
-                mask.beginFill(0xc0c0c0, 0.6);
+                mask.beginFill(0x000000, 0.8);
                 mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
                 mask.endFill();
                 app.stage.addChild(mask);
                 //draw message
-                //draw pic
+                let endText = new PIXI.Text("Joy - \n\n\nisn't ticlking funny?");
+                endText.style = {
+                    fontFamily: "Arial",
+                    fontSize: 50,
+                    fill: "white",
+                    wordWrap: true,
+                    wordWrapWidth: app.renderer.view.width/10*9,
+                }
+                endText.position.set(app.renderer.view.width/2, app.renderer.view.height/5);
                 //draw buttons
+                //draw back button
+                let backToMenu = new PIXI.Text("BACK TO MENU");
+                backToMenu.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "gray",
+                }
+                backToMenu.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+                backToMenu.buttonMode = true;
+                backToMenu.interactive = true;
+                backToMenu.on('click', toMenu);
+                function toMenu() {
+                    window.location.href="menu.html";
+                }
+                //draw continue button
+                let continueBtn = new PIXI.Graphics();
+                continueBtn.beginFill(0x6b432d);
+                continueBtn.drawPolygon([
+                    0, 0,             //First point
+                    0, 100,              //Second point
+                    80, 50                 //Third point
+                ]);
+                continueBtn.endFill();
+                continueBtn.x = app.renderer.view.width/2;
+                continueBtn.y = app.renderer.view.height/4*3;
+                continueBtn.buttonMode = true;
+                continueBtn.interactive = true;
+                continueBtn.on('click', goNext);//TBC
+                //TODO: go to next level
+                function goNext() {
+                    //window.location.href=".html";
+                }
+                //draw restart button
+                let restart = new PIXI.Text("RESTART");
+                restart.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "gray",
+                }
+                restart.x = app.renderer.view.width/5*4;
+                restart.y = app.renderer.view.height/5*4;
+                restart.buttonMode = true;
+                restart.interactive = true;
+                restart.on('click', refresh);
+                function refresh() {
+                    location.reload();
+                }
+                //draw image
+                PIXI.loader.add(image).load(setup);
+                function setup() {
+                    let capture = new PIXI.Sprite(PIXI.loader.resources[image].texture);
+                    capture.scale.x = 0.25;
+                    capture.scale.y = 0.25;
+                    capture.position.set(app.renderer.view.width/5, app.renderer.view.height/6);
+                    app.stage.addChild(capture);
+                }
+                //draw all ending elements
+                app.stage.addChild(mask, endText, backToMenu, continueBtn, restart);
                 clearInterval(update);
             }, 1300);
         } else {
