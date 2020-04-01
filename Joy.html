@@ -97,7 +97,6 @@
             arr.push(i,-i);
         }
 
-
         timer = setInterval(function(){
             for (i=0; i<slices.length; i++) {
                 slices[i].y+=50;
@@ -140,19 +139,19 @@
                 endText.position.set(app.renderer.view.width/2, app.renderer.view.height/5);
                 //draw buttons
                 //draw back button
-                let backToMenu = new PIXI.Text("BACK TO MENU");
-                backToMenu.style = {
-                    fontFamily: "Arial",
-                    fontSize: 30,
-                    fill: "gray",
-                }
-                backToMenu.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
-                backToMenu.buttonMode = true;
-                backToMenu.interactive = true;
-                backToMenu.on('click', toMenu);
-                function toMenu() {
-                    window.location.href="menu.html";
-                }
+//                let backToMenu = new PIXI.Text("BACK TO MENU");
+//                backToMenu.style = {
+//                    fontFamily: "Arial",
+//                    fontSize: 30,
+//                    fill: "gray",
+//                }
+//                backToMenu.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+//                backToMenu.buttonMode = true;
+//                backToMenu.interactive = true;
+//                backToMenu.on('click', toMenu);
+//                function toMenu() {
+//                    window.location.href="menu.html";
+//                }
                 //draw continue button
                 let continueBtn = new PIXI.Graphics();
                 continueBtn.beginFill(0x6b432d);
@@ -166,10 +165,10 @@
                 continueBtn.y = app.renderer.view.height/4*3;
                 continueBtn.buttonMode = true;
                 continueBtn.interactive = true;
-                continueBtn.on('click', goNext);//TBC
-                //TODO: go to next level
-                function goNext() {
-                    //window.location.href=".html";
+                continueBtn.on('click', gotoMenu);//TBC
+                //go back to menu
+                function gotoMenu() {
+                    window.location.href="menu.html";
                 }
                 //draw restart button
                 let restart = new PIXI.Text("RESTART");
@@ -196,7 +195,7 @@
                     app.stage.addChild(capture);
                 }
                 //draw all ending elements
-                app.stage.addChild(mask, endText, backToMenu, continueBtn, restart);
+                app.stage.addChild(mask, endText, continueBtn, restart);
                 clearInterval(update);
             }, 1300);
         } else {
