@@ -26,22 +26,19 @@
     document.body.appendChild(app.view);
 
     //Add introductory text
-    var message = "Hi, we're the Outsiders.\n\n\n" +
-        "You've been accidentally sucked into a black hole and lost all your emotions.\n\n\n" +
-        "Fortunately, you met us, the only residents living in the black hole without losing our minds - because we have chocolates! \n\n\n" +
-        "Now, we will guide you through several experiences of eating different emotion chocolates to get your emotions backBtn.\n\n\n" +
-        "Try to shave the giant chocolate, get the emotion slices, and feed yourself in a right way.\n\n\n" +
-        "Good luck. We hope you will enjoy it, well, after you have the feeling of joy.";
+    var message =
+        "Hi, your wife made you this box of chocolate.\n\n\n" +
+        "Give them a taste. Hope you will feel better..\n\n\n";
     let intro = new PIXI.Text();
     intro.style = {
         fontFamily: "Arial",
-        fontSize: 22,
+        fontSize: 30,
         fill: "white",
         wordWrap: true,
         wordWrapWidth: app.renderer.view.width/10*9,
     };
     intro.text = message;
-    intro.position.set(app.renderer.view.width/10, app.renderer.view.height/7);
+    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/3);
 
     //Render text
     app.stage.addChild(intro);
