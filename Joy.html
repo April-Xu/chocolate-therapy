@@ -33,7 +33,7 @@
     var count = 0;
     //set sound track
     var soundSrc = [];
-    for (var i=1; i<23; i++) {
+    for (var i=1; i<11; i++) {
         soundSrc.push("assets/sounds/"+i+".wav");
     }
 
@@ -65,7 +65,7 @@
         chocolate.buttonMode = false;
         chocolate.interactive = false;
         //play giggling
-        var soundNum = Math.floor(Math.random() * 23)+ 1;
+        var soundNum = Math.floor(Math.random() * 9);
         const sound = new PIXI.sound.Sound.from(soundSrc[soundNum]);
         sound.play();
         //draw slices

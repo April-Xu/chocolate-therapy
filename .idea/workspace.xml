@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Anger.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Anticipation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Nervous.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Sadness.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Shy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Surprise.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/11.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/12.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/13.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/14.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/15.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/16.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/17.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/18.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/19.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/20.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/21.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/22.wav" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/10.wav" afterPath="$PROJECT_DIR$/assets/sounds/10.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/2.wav" afterPath="$PROJECT_DIR$/assets/sounds/2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/3.wav" afterPath="$PROJECT_DIR$/assets/sounds/3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/4.wav" afterPath="$PROJECT_DIR$/assets/sounds/4.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/5.wav" afterPath="$PROJECT_DIR$/assets/sounds/5.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/6.wav" afterPath="$PROJECT_DIR$/assets/sounds/6.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/7.wav" afterPath="$PROJECT_DIR$/assets/sounds/7.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/8.wav" afterPath="$PROJECT_DIR$/assets/sounds/8.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/9.wav" afterPath="$PROJECT_DIR$/assets/sounds/9.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Joy.html" afterPath="$PROJECT_DIR$/Joy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nervous.html" afterPath="$PROJECT_DIR$/Nervous.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menu.html" afterPath="$PROJECT_DIR$/menu.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,57 +43,17 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
-              <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shy.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Shy.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Anticipation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sadness.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sadness.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Anger.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Anger.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -97,31 +72,21 @@
       <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Nervous.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            <state relative-caret-position="375">
+              <caret line="38" column="19" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Joy.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Joy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="44" />
+            <state relative-caret-position="539">
+              <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
               <folding>
-                <marker date="1585852605629" expanded="true" signature="7186:7540" ph="{...}" />
+                <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="intro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/intro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -162,14 +127,14 @@
         <option value="$PROJECT_DIR$/level1.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/intro.html" />
-        <option value="$PROJECT_DIR$/Joy.html" />
         <option value="$PROJECT_DIR$/Shy.html" />
         <option value="$PROJECT_DIR$/Anticipation.html" />
         <option value="$PROJECT_DIR$/Sadness.html" />
         <option value="$PROJECT_DIR$/Anger.html" />
         <option value="$PROJECT_DIR$/Heart-broken.html" />
-        <option value="$PROJECT_DIR$/Nervous.html" />
         <option value="$PROJECT_DIR$/menu.html" />
+        <option value="$PROJECT_DIR$/Nervous.html" />
+        <option value="$PROJECT_DIR$/Joy.html" />
       </list>
     </option>
   </component>
@@ -283,12 +248,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="5483000" />
+      <workItem from="1585780001471" duration="5836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25800000" />
+    <option name="totallyTimeSpent" value="26153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -354,7 +319,7 @@
         <state relative-caret-position="2055">
           <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
           <folding>
-            <marker date="1585852605629" expanded="true" signature="7186:7540" ph="{...}" />
+            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -389,7 +354,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding>
-            <marker date="1585852605629" expanded="true" signature="7186:7540" ph="{...}" />
+            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -408,26 +373,16 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intro.html">
+    <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="765">
+          <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Joy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <marker date="1585852605629" expanded="true" signature="7186:7540" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -471,19 +426,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Nervous.html">
+    <entry file="file://$PROJECT_DIR$/intro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        <state relative-caret-position="600">
+          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
+    <entry file="file://$PROJECT_DIR$/Nervous.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <state relative-caret-position="375">
+          <caret line="38" column="19" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Joy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+          <folding>
+            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
