@@ -26,42 +26,52 @@
     document.body.appendChild(app.view);
 
     //Add chocolate box
-    var levelName=["Joy", "Joy", "Joy", "Joy",
-        "Joy", "Joy", "Joy", "Joy",
-        "Joy", "Joy", "Joy", "Joy",
-        "Joy", "Joy", "Joy", "Joy"]
-    for (var i=0; i<4;i++) {
-        for (var j=0; j<4; j++) {
-            let rectangle = new PIXI.Graphics();
-            let level = new PIXI.Text(levelName[i+j*4]);
-            rectangle.lineStyle(4, 0xFFFFFF, 1);
-            rectangle.drawRect(0, 0, 150, 150);
-            rectangle.endFill();
-            rectangle.x = app.renderer.view.width/4+i*150;
-            rectangle.y = app.renderer.view.height/10+j*150;
-            level.style = {
-                fontFamily: "Arial",
-                fontSize: 50,
-                fill: "#6b432d",
-            };
-            level.position.set(app.renderer.view.width/4+i*150+30,
-                app.renderer.view.height/10+j*150+50);
-            level.buttonMode = true;
-            level.interactive = true;
-            level.on('click', gotoLevel);  //need to change
-            app.stage.addChild(rectangle, level);
-        }
+    var levelName=["Joy", "Sadness", "Nervous", "Shy",
+        "Anger", "Anticipation"];
+    //draw first 6 level
+    for (var i=0; i<6;i++) {
+        let rectangle = new PIXI.Graphics();
+        let level = new PIXI.Text(levelName[i]);
+        rectangle.lineStyle(4, 0xFFFFFF, 1);
+        rectangle.drawRect(0, 0, 240, 150);
+        rectangle.endFill();
+        rectangle.x = app.renderer.view.width/4+(Math.floor(i%3))*240;
+        rectangle.y = app.renderer.view.height/10+(Math.floor(i/3))*150;
+        level.style = {
+            fontFamily: "Arial",
+            fontSize: 45,
+            fill: "#6b432d",
+        };
+        level.position.set(app.renderer.view.width/17*5+(Math.floor(i%3))*210,
+            app.renderer.view.height/10+(Math.floor(i/3))*150+40);
+        level.buttonMode = true;
+        level.interactive = true;
+        level.on('click', function(){
+            window.location.href = this.text+".html";
+        });
+        app.stage.addChild(rectangle, level);
     }
-
-    //Todo: add individual function
-//    function gotoLevel(name) {
-//        window.location.href=name+".html";
-//    }
-
-    //add gotolevel function
-    function gotoLevel() {
-        window.location.href="Joy.html";
-    }
+    //draw the last level
+    let rectangle = new PIXI.Graphics();
+    let level = new PIXI.Text('"Surprise"');
+    rectangle.lineStyle(4, 0xFFFFFF, 1);
+    rectangle.drawRect(0, 0, 720, 150);
+    rectangle.endFill();
+    rectangle.x = app.renderer.view.width/4;
+    rectangle.y = app.renderer.view.height/10+300;
+    level.style = {
+        fontFamily: "Arial",
+        fontSize: 45,
+        fill: "#6b432d",
+    };
+    level.position.set(app.renderer.view.width/4+230,
+        app.renderer.view.height/10+340);
+    level.buttonMode = true;
+    level.interactive = true;
+    level.on('click', function(){
+        window.location.href="Surprise.html";
+    }); 
+    app.stage.addChild(rectangle, level);
 
     //add back
     let backBtn = new PIXI.Text("BACK");
