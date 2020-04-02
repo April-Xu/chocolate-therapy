@@ -120,7 +120,7 @@
             //draw end screen
             setTimeout(function(){
                 //get image
-                const image = app.renderer.plugins.extract.base64(app.stage);
+//                const image = app.renderer.plugins.extract.base64(app.stage);
                 //draw mask
                 let mask = new PIXI.Graphics();
                 mask.beginFill(0x000000, 0.8);
@@ -128,15 +128,16 @@
                 mask.endFill();
                 app.stage.addChild(mask);
                 //draw message
-                let endText = new PIXI.Text("Joy - \n\n\nisn't ticlking fun?");
+                let endText = new
+                PIXI.Text('" Wow Look at her.\n\n\nShe is laughing! OMG she is so cute...\n\n\nStop tickling, come and take pictures! "');
                 endText.style = {
                     fontFamily: "Arial",
-                    fontSize: 50,
+                    fontSize: 40,
                     fill: "white",
                     wordWrap: true,
                     wordWrapWidth: app.renderer.view.width/10*9,
                 }
-                endText.position.set(app.renderer.view.width/2, app.renderer.view.height/5);
+                endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
                 //draw buttons
                 //draw back button
 //                let backToMenu = new PIXI.Text("BACK TO MENU");
@@ -186,14 +187,14 @@
                     location.reload();
                 }
                 //draw image
-                PIXI.loader.add(image).load(setup);
-                function setup() {
-                    let capture = new PIXI.Sprite(PIXI.loader.resources[image].texture);
-                    capture.scale.x = 0.25;
-                    capture.scale.y = 0.25;
-                    capture.position.set(app.renderer.view.width/5, app.renderer.view.height/6);
-                    app.stage.addChild(capture);
-                }
+//                PIXI.loader.add(image).load(setup);
+//                function setup() {
+//                    let capture = new PIXI.Sprite(PIXI.loader.resources[image].texture);
+//                    capture.scale.x = 0.25;
+//                    capture.scale.y = 0.25;
+//                    capture.position.set(app.renderer.view.width/5, app.renderer.view.height/6);
+//                    app.stage.addChild(capture);
+//                }
                 //draw all ending elements
                 app.stage.addChild(mask, endText, continueBtn, restart);
                 clearInterval(update);

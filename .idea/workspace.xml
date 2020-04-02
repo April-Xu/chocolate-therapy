@@ -39,9 +39,11 @@
       <file leaf-file-name="Joy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="171" column="17" lean-forward="true" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="207">
+              <caret line="131" column="134" lean-forward="false" selection-start-line="131" selection-start-column="134" selection-end-line="131" selection-end-column="134" />
+              <folding>
+                <marker date="1585846635918" expanded="true" signature="7186:7540" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,12 +147,6 @@
             <path>
               <item name="chocolate-therapy" type="b2602c69:ProjectViewProjectNode" />
               <item name="chocolate-therapy" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="sounds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chocolate-therapy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chocolate-therapy" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -213,12 +209,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="1191000" />
+      <workItem from="1585780001471" duration="2386000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21508000" />
+    <option name="totallyTimeSpent" value="22703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -283,7 +279,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
           <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1585846635918" expanded="true" signature="7186:7540" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -316,7 +314,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-          <folding />
+          <folding>
+            <marker date="1585846635918" expanded="true" signature="7186:7540" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -357,9 +357,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Joy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="171" column="17" lean-forward="true" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="207">
+          <caret line="131" column="134" lean-forward="false" selection-start-line="131" selection-start-column="134" selection-end-line="131" selection-end-column="134" />
+          <folding>
+            <marker date="1585846635918" expanded="true" signature="7186:7540" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
