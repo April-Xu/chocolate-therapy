@@ -8,6 +8,186 @@
     <script src="js/pixi-sound.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    //Get webgl support
+    let type = "WebGL";
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+    PIXI.utils.sayHello(type);
 
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#7f3d31", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    //set slices range
+    var xmin = app.renderer.view.width/5*2+app.renderer.view.width/10-app.renderer.view.width/20*3;
+    var xmax = app.renderer.view.width/5*2+app.renderer.view.width/10+app.renderer.view.width/20*3;
+    //set slice count to 0
+    var count = 0;
+    //set sound track
+    var soundSrc = [];
+    for (var i=1; i<11; i++) {
+        soundSrc.push("assets/sounds/"+i+".wav");
+    }
+
+    //draw start screen
+    //draw mask
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x000000, 0.8);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+    mask.endFill();
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.on("click", startNervous);
+    app.stage.addChild(mask);
+
+    //draw message
+    let startText = new
+    PIXI.Text('" Hey. Take a deep breath."\n\n\n"..."\n\n\n"Yes, she is going to be fine. Just wait here calmly.\n\n\nThe baby is about to come. Are you ready?"');
+    startText.style = {
+        fontFamily: "Arial",
+        fontSize: 35,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    }
+    startText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+    app.stage.addChild(startText);
+
+    //starts the level
+    function startNervous(){
+        //clear stage
+        for (var i = app.stage.children.length - 1; i >= 0; i--) {
+            app.stage.removeChild(app.stage.children[i]);
+        };
+        //draw chocolate
+        let chocolate = new PIXI.Graphics();
+        chocolate.beginFill(0x6b432d);
+        chocolate.drawCircle(0, 0, app.renderer.view.width/10*3);
+        chocolate.endFill();
+        chocolate.x = app.renderer.view.width/5*2+app.renderer.view.width/10;
+        chocolate.y = app.renderer.view.height/10;
+        app.stage.addChild(chocolate);
+        //draw instruction
+        let instruction = new PIXI.Text("Which one is Cococola Red?");
+        instruction.style = {
+            fontFamily: "Arial",
+            fontSize: 30,
+            fill: "white",
+        }
+        instruction.position.set(app.renderer.view.width/3, app.renderer.view.height/30);
+        app.stage.addChild(instruction);
+        //draw maze
+        let mazeStage = new PIXI.Container({width: 300, height: 300});
+        mazeStage.x = app.renderer.view.width/19*7;
+        mazeStage.y = app.renderer.view.height/8;
+        app.stage.addChild(mazeStage);
+        PIXI.loader.add(["assets/images/fuse.png"]).load(setup);
+        function setup() {
+            //draw fuse
+            let fuse = new PIXI.Sprite(PIXI.loader.resources["assets/images/fuse.png"].texture);
+            fuse.scale.x = 0.4;
+            fuse.scale.y = 0.4;
+            fuse.anchor.x = 0.5;
+            fuse.anchor.y = 0.5;
+            fuse.rotation = 2.3;
+            fuse.x = app.renderer.view.width/4*3;
+            fuse.y = app.renderer.view.height/8*5;
+            app.stage.addChild(fuse);
+        }
+        //draw ticking
+        var time = 61;
+        let clock = new PIXI.Text("00 : "+time);
+        clock.style = {
+            fontFamily: "Arial",
+            fontSize: 80,
+            fill: "red",
+        }
+        clock.position.set(app.renderer.view.width/5*2, app.renderer.view.height/7*5);
+        app.stage.addChild(clock);
+        //play ticking
+        var counting = setInterval(function(){
+            time --;
+            clock.text = "00 : "+time;
+            if (time == 0){
+                clearInterval(counting);
+                explode();
+            }
+        },1000);
+        const ticking = new PIXI.sound.Sound.from("assets/sounds/ticking.mp3");
+        ticking.play();
+        const burning = new PIXI.sound.Sound.from("assets/sounds/fuse burning.mp3");
+        burning.play();
+    }
+
+
+
+    //explode function
+    function explode() {
+        //play explode effect
+        const sound = new PIXI.sound.Sound.from("assets/sounds/explosion.mp3");
+        sound.play();
+        //draw mask
+        let mask = new PIXI.Graphics();
+        mask.beginFill(0x000000, 0.8);
+        mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+        mask.endFill();
+        // draw message
+        let endText = new
+        PIXI.Text("You passed out.\n\n\n In a long time of unconsciousness, \n\n\nyou don't really know what happened after the baby comes.");
+        endText.style = {
+            fontFamily: "Arial",
+            fontSize: 35,
+            fill: "white",
+            wordWrap: true,
+            wordWrapWidth: app.renderer.view.width/10*9,
+        }
+        endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+                //draw continue button
+        let continueBtn = new PIXI.Graphics();
+        continueBtn.beginFill(0x6b432d);
+        continueBtn.drawPolygon([
+            0, 0,             //First point
+            0, 100,              //Second point
+            80, 50                 //Third point
+        ]);
+        continueBtn.endFill();
+        continueBtn.x = app.renderer.view.width/2;
+        continueBtn.y = app.renderer.view.height/4*3;
+        continueBtn.buttonMode = true;
+        continueBtn.interactive = true;
+        continueBtn.on('click', gotoMenu);//TBC
+        //go back to menu
+        function gotoMenu() {
+            window.location.href="menu.html";
+        }
+        //draw restart button
+        let restart = new PIXI.Text("RESTART");
+        restart.style = {
+            fontFamily: "Arial",
+            fontSize: 30,
+            fill: "gray",
+        }
+        restart.x = app.renderer.view.width/5*4;
+        restart.y = app.renderer.view.height/5*4;
+        restart.buttonMode = true;
+        restart.interactive = true;
+        restart.on('click', refresh);
+        function refresh() {
+            location.reload();
+        }
+        //draw all ending elements
+        app.stage.addChild(mask, endText, continueBtn, restart);
+
+    }
+
+</script>
 </body>
 </html>

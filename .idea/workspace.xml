@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/11.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/12.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/13.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/14.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/15.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/16.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/17.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/18.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/19.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/20.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/21.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/22.wav" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/10.wav" afterPath="$PROJECT_DIR$/assets/sounds/10.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/2.wav" afterPath="$PROJECT_DIR$/assets/sounds/2.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/3.wav" afterPath="$PROJECT_DIR$/assets/sounds/3.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/4.wav" afterPath="$PROJECT_DIR$/assets/sounds/4.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/5.wav" afterPath="$PROJECT_DIR$/assets/sounds/5.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/6.wav" afterPath="$PROJECT_DIR$/assets/sounds/6.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/7.wav" afterPath="$PROJECT_DIR$/assets/sounds/7.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/8.wav" afterPath="$PROJECT_DIR$/assets/sounds/8.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sounds/9.wav" afterPath="$PROJECT_DIR$/assets/sounds/9.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Joy.html" afterPath="$PROJECT_DIR$/Joy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nervous.html" afterPath="$PROJECT_DIR$/Nervous.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menu.html" afterPath="$PROJECT_DIR$/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intro.html" afterPath="$PROJECT_DIR$/intro.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +21,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -52,7 +31,7 @@
       <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="1080">
               <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
               <folding />
             </state>
@@ -69,23 +48,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Nervous.html">
+      <file leaf-file-name="intro.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/intro.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="38" column="19" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+            <state relative-caret-position="390">
+              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Joy.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Nervous.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Joy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+            <state relative-caret-position="419">
+              <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
               <folding>
-                <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
+                <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -111,6 +100,11 @@
       <find>8b4f09</find>
       <find>7f3d31</find>
       <find>rec</find>
+      <find>stage</find>
+      <find>warning</find>
+      <find>matrix</find>
+      <find>cat</find>
+      <find>contain</find>
       <find>sound</find>
     </findStrings>
   </component>
@@ -126,13 +120,13 @@
         <option value="$PROJECT_DIR$/level1-joy.html" />
         <option value="$PROJECT_DIR$/level1.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/intro.html" />
         <option value="$PROJECT_DIR$/Shy.html" />
         <option value="$PROJECT_DIR$/Anticipation.html" />
         <option value="$PROJECT_DIR$/Sadness.html" />
         <option value="$PROJECT_DIR$/Anger.html" />
         <option value="$PROJECT_DIR$/Heart-broken.html" />
         <option value="$PROJECT_DIR$/menu.html" />
+        <option value="$PROJECT_DIR$/intro.html" />
         <option value="$PROJECT_DIR$/Nervous.html" />
         <option value="$PROJECT_DIR$/Joy.html" />
       </list>
@@ -186,6 +180,12 @@
             <path>
               <item name="chocolate-therapy" type="b2602c69:ProjectViewProjectNode" />
               <item name="chocolate-therapy" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chocolate-therapy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chocolate-therapy" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -215,24 +215,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.menu.html">
+  <component name="RunManager" selected="JavaScript Debug.Nervous.html">
     <configuration name="Joy.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Joy.html" />
+    <configuration name="Nervous.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Nervous.html" />
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/index.html" />
     <configuration name="intro.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/intro.html" />
     <configuration name="menu.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/menu.html" />
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.menu.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.intro.html" />
       <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.menu.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.intro.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.intro.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.menu.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.intro.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -248,12 +250,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="5836000" />
+      <workItem from="1585780001471" duration="17626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26153000" />
+    <option name="totallyTimeSpent" value="37943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -319,7 +321,7 @@
         <state relative-caret-position="2055">
           <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
           <folding>
-            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
+            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -354,7 +356,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding>
-            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
+            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -366,22 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -426,29 +412,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intro.html">
+    <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="1080">
+          <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Nervous.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="38" column="19" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        <state relative-caret-position="300">
+          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Joy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        <state relative-caret-position="419">
+          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
           <folding>
-            <marker date="1585856596926" expanded="true" signature="7182:7536" ph="{...}" />
+            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nervous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
