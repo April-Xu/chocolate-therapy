@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/sounds/ticking.wav" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Joy.html" afterPath="$PROJECT_DIR$/Joy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nervous.html" afterPath="$PROJECT_DIR$/Nervous.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intro.html" afterPath="$PROJECT_DIR$/intro.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,18 +32,8 @@
       <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Surprise.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Surprise.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="249">
+              <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -61,8 +52,20 @@
       <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Nervous.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+            <state relative-caret-position="208">
+              <caret line="289" column="87" lean-forward="false" selection-start-line="289" selection-start-column="87" selection-end-line="289" selection-end-column="87" />
+              <folding>
+                <element signature="e#2535#8661#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Surprise.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Surprise.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -71,10 +74,10 @@
       <file leaf-file-name="Joy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            <state relative-caret-position="493">
+              <caret line="198" column="72" lean-forward="false" selection-start-line="198" selection-start-column="72" selection-end-line="198" selection-end-column="72" />
               <folding>
-                <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
+                <marker date="1585974475380" expanded="true" signature="7181:7535" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -104,8 +107,14 @@
       <find>warning</find>
       <find>matrix</find>
       <find>cat</find>
-      <find>contain</find>
       <find>sound</find>
+      <find>contain</find>
+      <find>rect</find>
+      <find>0.5</find>
+      <find>this</find>
+      <find>random</find>
+      <find>play</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,8 +136,8 @@
         <option value="$PROJECT_DIR$/Heart-broken.html" />
         <option value="$PROJECT_DIR$/menu.html" />
         <option value="$PROJECT_DIR$/intro.html" />
-        <option value="$PROJECT_DIR$/Nervous.html" />
         <option value="$PROJECT_DIR$/Joy.html" />
+        <option value="$PROJECT_DIR$/Nervous.html" />
       </list>
     </option>
   </component>
@@ -250,12 +259,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="17626000" />
+      <workItem from="1585780001471" duration="30553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37943000" />
+    <option name="totallyTimeSpent" value="50870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -321,7 +330,7 @@
         <state relative-caret-position="2055">
           <caret line="137" column="17" lean-forward="false" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
           <folding>
-            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
+            <marker date="1585974475380" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -356,7 +365,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding>
-            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
+            <marker date="1585974475380" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -388,34 +397,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sadness.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Anger.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Surprise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="7" lean-forward="false" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -428,6 +413,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sadness.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/intro.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -436,21 +453,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Surprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Joy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        <state relative-caret-position="493">
+          <caret line="198" column="72" lean-forward="false" selection-start-line="198" selection-start-column="72" selection-end-line="198" selection-end-column="72" />
           <folding>
-            <marker date="1585891673921" expanded="true" signature="7181:7535" ph="{...}" />
+            <marker date="1585974475380" expanded="true" signature="7181:7535" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Nervous.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="208">
+          <caret line="289" column="87" lean-forward="false" selection-start-line="289" selection-start-column="87" selection-end-line="289" selection-end-column="87" />
+          <folding>
+            <element signature="e#2535#8661#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
