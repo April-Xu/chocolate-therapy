@@ -8,6 +8,269 @@
     <script src="js/pixi-sound.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    //Get webgl support
+    let type = "WebGL";
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+    PIXI.utils.sayHello(type);
 
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#6b432d", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    //set background music
+    const bgMusic = new PIXI.sound.Sound.from("assets/sounds/waiting for you by Adam Vitovsky.mp3");
+    bgMusic.volume = 0.5;
+    bgMusic.play();
+    const cut = new PIXI.sound.Sound.from("assets/sounds/cut.mp3");
+    const finish = new PIXI.sound.Sound.from("assets/sounds/finishChocolate.wav");
+    const crack = new PIXI.sound.Sound.from("assets/sounds/crack.mp3");
+    const goodbye = new PIXI.sound.Sound.from("assets/sounds/goodbye.mp3");
+
+    //add instruction 1
+    var instruction = new
+    PIXI.Text("This is the last chocolate my wife gave me.\nI can't believe I lose all of the memory with her. Thank god she made me these chocolates.\n" +
+        "You know what? I should definitely make her a chocolate full of love.");
+    instruction.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "#6b432d",
+    }
+    instruction.position.set(app.renderer.view.width/8, app.renderer.view.height/20);
+    app.stage.addChild(instruction);
+
+    //load chocolate images
+    PIXI.loader.add([
+            "assets/images/chocolate1.png",
+            "assets/images/chocolate2.png",
+            "assets/images/chocolate3.png",
+            "assets/images/chocolate4.png",
+            "assets/images/chocolate5.png",
+            "assets/images/chocolate6.png",
+            "assets/images/chocolate7.png",
+            "assets/images/chocolate8.png",
+            "assets/images/chocolate9.png",
+            "assets/images/chocolate10.png",
+            "assets/images/heart1.png",
+            "assets/images/heart2.png",
+            "assets/images/heart3.png",
+            "assets/images/heart4.png",
+            "assets/images/picture.png",
+        ]).load(setup);
+
+    var chocolateSprites = [];
+    var count = 0;
+    function setup() {
+        //Create the chocolate sprites
+        chocolateSprites = [];
+        for (var i=1; i<11; i++) {
+            let chocolate = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate"+i+".png"].texture);
+            chocolate.x = app.renderer.view.width/3;
+            chocolate.y = app.renderer.view.height/5;
+            chocolate.interactive = true;
+            chocolate.buttonMode = true;
+            chocolate.label = i;
+            //change chocolate status
+            chocolate.on("click", function(){
+                if (this.label<10) {
+                    cut.play();
+                    this.visible = false;
+                    app.stage.addChild(chocolateSprites[this.label]);
+                    chocolateSprites[this.label].visible = true;
+                } else {
+                    heart(this);
+                };
+            })
+            chocolateSprites.push(chocolate);
+        }
+
+        //add 1st chocolate
+        app.stage.addChild(chocolateSprites[0]);
+
+        // when heart appears
+        function heart(completeHeart) {
+            finish.play();
+            completeHeart.interactivity = false;
+            completeHeart.buttonMode = false;
+            completeHeart.visible = false;
+            app.stage.removeChild(completeHeart);
+            let fakeHeart = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate10.png"].texture);
+            fakeHeart.x = app.renderer.view.width/3;
+            fakeHeart.y = app.renderer.view.height/5;
+            app.stage.addChild(fakeHeart);
+            instruction.text =
+                "Hey this is a perfect heart. \n\nLast step: pick it up and give it a lovely wrapping!";
+            instruction.style.fontSize = 30;
+            setTimeout(function() {
+                fakeHeart.visible = false;
+                //crack once
+                crack.play();
+                instruction.text = "Wait..am I hearing something?";
+                this.visible = false;
+                let brokenHeart1 = new
+                PIXI.Sprite(PIXI.loader.resources["assets/images/heart1.png"].texture);
+                brokenHeart1.x = app.renderer.view.width / 3;
+                brokenHeart1.y = app.renderer.view.height / 5;
+                app.stage.addChild(brokenHeart1);
+                //crack 2nd time
+                setTimeout(function(){
+                    crack.play();
+                    instruction.text = "What's going on?";
+                    brokenHeart1.visible = false;
+                    let brokenHeart2 = new
+                    PIXI.Sprite(PIXI.loader.resources["assets/images/heart2.png"].texture);
+                    brokenHeart2.x = app.renderer.view.width / 3;
+                    brokenHeart2.y = app.renderer.view.height / 5;
+                    app.stage.addChild(brokenHeart2);
+                    //crack 3rd time
+                    setTimeout(function(){
+                        crack.play();
+                        instruction.text = "Is it cracking?!";
+                        brokenHeart2.visible = false;
+                        let brokenHeart3 = new
+                        PIXI.Sprite(PIXI.loader.resources["assets/images/heart3.png"].texture);
+                        brokenHeart3.x = app.renderer.view.width / 3;
+                        brokenHeart3.y = app.renderer.view.height / 5;
+                        app.stage.addChild(brokenHeart3);
+                        //crack 4th time
+                        setTimeout(function(){
+                            crack.play();
+                            instruction.text = "No way..it's broken! I need to start again!";
+                            brokenHeart3.visible = false;
+                            var brokenHeart4 = new
+                            PIXI.Sprite(PIXI.loader.resources["assets/images/heart4.png"].texture);
+                            brokenHeart4.x = app.renderer.view.width / 3;
+                            brokenHeart4.y = app.renderer.view.height / 5;
+                            app.stage.addChild(brokenHeart4);
+                            setTimeout(function(){
+                                //check if the iteration works several times
+                                count++;
+                                if (count == 3) {
+                                    instruction.text =
+                                        "No way..it's broken! I need to start again!\n\n" +
+                                        "Wait...What's this?";
+                                    app.stage.removeChild(brokenHeart4);
+                                    let picture = new
+                                    PIXI.Sprite(PIXI.loader.resources["assets/images/picture.png"].texture);
+                                    picture.x = app.renderer.view.width / 3 + 50;
+                                    picture.y = app.renderer.view.height / 5 - 30;
+                                    app.stage.addChild(picture);
+                                    picture.interactive = true;
+                                    picture.buttonMode = true;
+                                    app.stage.addChild(picture);
+                                    brokenHeart4.x = app.renderer.view.width / 3;
+                                    brokenHeart4.y = app.renderer.view.height / 5;
+                                    app.stage.addChild(brokenHeart4);
+                                    picture.on("click", end);
+                                } else {
+                                    console.log(count, "this is where sprite 0 comes")
+                                    brokenHeart4.visible = false;
+                                    app.stage.removeChild(brokenHeart4);
+                                    //add 1st chocolate again
+                                    chocolateSprites[0].visible = true;
+                                }
+                            }, 2000);
+                        }, 3000-(count)*500);
+                    }, 3000-(count)*500);
+                }, 3000-(count)*500);
+            }, 3000-(count)*500);
+        }
+
+        //end function
+        function end() {
+            bgMusic.stop();
+            goodbye.volume = 0.5;
+            goodbye.play();
+            //draw mask
+            let mask = new PIXI.Graphics();
+            mask.beginFill(0x000000, 0.8);
+            mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+            mask.endFill();
+            app.stage.addChild(mask);
+            //draw message
+            let endText = new PIXI.Text("It's an old picture.");
+            endText.style = {
+                fontFamily: "Arial",
+                fontSize: 60,
+                fill: "white",
+            }
+            endText.position.set(app.renderer.view.width/10, app.renderer.view.height/5);
+            //draw continue button
+            let continueBtn = new PIXI.Graphics();
+            continueBtn.beginFill(0x6b432d);
+            continueBtn.drawPolygon([
+                0, 0,             //First point
+                0, 100,              //Second point
+                80, 50                 //Third point
+            ]);
+            continueBtn.endFill();
+            continueBtn.x = app.renderer.view.width/2;
+            continueBtn.y = app.renderer.view.height/4*3;
+            continueBtn.buttonMode = true;
+            continueBtn.interactive = true;
+            continueBtn.number = 1;
+            continueBtn.on('click', function(){
+                this.number = checkTextNumber(this.number, this);
+            });
+            //check text number
+            function checkTextNumber(number, btn){
+                switch (number) {
+                    case 1:
+                        endText.text = "It looks familiar to me.\n\n\nWhat is it?";
+                        break;
+                    case 2:
+                        endText.text = "... ...";
+                        break;
+                    case 3:
+                        endText.text = "Oh.";
+                        break;
+                    case 4:
+                        endText.text =
+                            "It's your tombstone. \n\nI took the picture right after I visited you.";
+                        break;
+                    case 5:
+                        endText.text =
+                            "Hah.. \n\nCan you see the tree around you? \n\nIt's growing well.";
+                        break;
+                    case 6:
+                        endText.text = "... ...";
+                        break;
+                    case 7:
+                        endText.text =
+                            "Yes, I understand.\n\nI can finally live without you and with you.\n\nGoodbye, my love.";
+                        break;
+                    case 8:
+                        btn.visible = false;
+                        app.stage.removeChild(btn);
+                        let ending = new PIXI.Text("The End");
+                        ending.style = {
+                            fontFamily: "Arial",
+                            fontSize: 50,
+                            fill: "#6b432d",
+                        }
+                        ending.x = app.renderer.view.width/2 - 50;
+                        ending.y = app.renderer.view.height/4*3;
+                        ending.interactive = true;
+                        ending.buttonMode = true;
+                        ending.on("click", function(){
+                            window.location.href="index.html";
+                        })
+                        app.stage.addChild(ending);
+                }
+                return number+1;
+            }
+            app.stage.addChild(mask, endText, continueBtn);
+        }
+    }
+
+</script>
 </body>
 </html>
