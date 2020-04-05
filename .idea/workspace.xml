@@ -16,21 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="106" lean-forward="false" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
               <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sadness.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sadness.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-630">
+              <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -48,56 +48,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/intro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Anticipation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Surprise.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Surprise.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="74" column="109" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="109" />
-              <folding>
-                <element signature="e#3772#8759#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Nervous.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Shy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1318">
-              <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-              <folding>
-                <element signature="e#3821#5759#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="31" column="70" lean-forward="false" selection-start-line="31" selection-start-column="70" selection-end-line="31" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,9 +94,10 @@
       <find>fuse</find>
       <find>i</find>
       <find>color</find>
-      <find>this</find>
       <find>chocolate</find>
+      <find>tremble</find>
       <find>setinterval</find>
+      <find>this</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -280,12 +237,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="50149000" />
+      <workItem from="1585780001471" duration="50667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70466000" />
+    <option name="totallyTimeSpent" value="70984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -418,14 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sadness.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -434,44 +383,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Joy.html">
+    <entry file="file://$PROJECT_DIR$/Nervous.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="88" column="26" lean-forward="false" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
-          <folding>
-            <marker date="1586025690018" expanded="true" signature="7181:7535" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/intro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Anticipation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="106" lean-forward="false" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
+        <state relative-caret-position="-152">
+          <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -486,21 +401,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Nervous.html">
+    <entry file="file://$PROJECT_DIR$/Anticipation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
+        <state relative-caret-position="480">
+          <caret line="85" column="37" lean-forward="true" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="106" lean-forward="false" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sadness.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Joy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="88" column="26" lean-forward="false" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
+          <folding>
+            <marker date="1586025690018" expanded="true" signature="7181:7535" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Shy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1318">
-          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding>
-            <element signature="e#3821#5759#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="31" column="70" lean-forward="false" selection-start-line="31" selection-start-column="70" selection-end-line="31" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
