@@ -29,7 +29,7 @@
     var message =
         '"Hey man, we are glad you are here. \n\n\n' +
         'Your wife made you this box of chocolate.\n\n\n' +
-        'Give them a taste. Hope you will feel better..\n\n\n"';
+        'Give them a taste. Hope you will feel better.."\n\n\n';
     let intro = new PIXI.Text();
     intro.style = {
         fontFamily: "Arial",
@@ -39,7 +39,7 @@
         wordWrapWidth: app.renderer.view.width/10*9,
     };
     intro.text = message;
-    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/3);
+    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/5);
 
     //Render text
     app.stage.addChild(intro);
