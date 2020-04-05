@@ -33,6 +33,7 @@
     var count = 0;
     //set sound track
     const bg = new PIXI.sound.Sound.from("assets/sounds/tears.mp3");
+    const dripping = new PIXI.sound.Sound.from("assets/sounds/dripping.mp3");
     bg.play();
 
     //draw chocolate
@@ -76,6 +77,7 @@
                 slice.buttonMode = true;
                 slice.on("click", function(){
                     count ++;
+                    dripping.play();
                     let sliceClone = new PIXI.Sprite(PIXI.loader.resources["assets/images/drop.png"].texture);
                     sliceClone.x = Math.floor(Math.random() * (xmax-xmin+200) ) + xmin - 100;
                     sliceClone.y = app.renderer.view.height-100;
