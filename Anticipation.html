@@ -8,7 +8,7 @@
     <script src="js/pixi-sound.js"></script>
 </head>
 <body>
-    <script type="text/javascript">
+<script type="text/javascript">
     //Get webgl support
     let type = "WebGL";
     if(!PIXI.utils.isWebGLSupported()){
@@ -26,6 +26,10 @@
     app.renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(app.view);
 
+    //set sound track
+    const success = new PIXI.sound.Sound.from("assets/sounds/success.wav");
+    const finish = new PIXI.sound.Sound.from("assets/sounds/finishChocolate.wav");
+
     //draw start screen
     //draw mask
     let mask = new PIXI.Graphics();
@@ -39,7 +43,7 @@
 
     //draw message
     let startText = new
-    PIXI.Text('Its been a while since we started dating\n\n\nBut suddenly she calls you up sounding urgent\n\n\nWhat could it be?\n\n\nI quickly hurry over to her place...');
+    PIXI.Text('Its been a while since you started dating.\n\n\nBut suddenly she calls you up sounding urgent.\n\n\nWhat could it be?\n\n\n');
     startText.style = {
         fontFamily: "Arial",
         fontSize: 35,
@@ -67,126 +71,174 @@
 //        instruction.position.set(app.renderer.view.width/5+70, app.renderer.view.height/30);
 //        app.stage.addChild(instruction);
 
-         //bol is count btw
-         let bol = 15;
+        //bol is count btw
+        let bol = 15;
 
         PIXI.loader.add([
             "assets/images/box1.png",
+            "assets/images/box2.png",
+            "assets/images/box3.png",
+            "assets/images/box4.png",
+            "assets/images/box5.png",
+            "assets/images/box6.png",
+            "assets/images/box7.png",
+            "assets/images/box8.png",
+            "assets/images/box9.png",
+            "assets/images/box10.png",
+            "assets/images/box11.png",
+            "assets/images/box12.png",
+            "assets/images/box13.png",
+            "assets/images/chocolate.png",
         ]).load(setup);
-            // // create a texture from an image path
-            const texture =
-                PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_01.png');
 
-
-            // // create a second texture
-            const secondTexture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_06.png');
-
-            // // create a new Sprite using the texture
-            //let dude = new PIXI.Sprite(PIXI.loader.resources["assets/images/fuse.png"].texture);
-            let dude = new PIXI.Sprite(texture);
-
-            // // center the sprites anchor point
-            //dude.anchor.set(0.5);
-
-            dude.scale.x *= 2;
-                dude.scale.y *= 2;
-
-            // // move the sprite to the center of the screen
-            dude.x = 450  ;
-            dude.y = 230;
-
-            app.stage.addChild(dude);
-
-            // // make the sprite interactive
-            dude.interactive = true;
-            dude.buttonMode = true;
-
-            // Pointers normalize touch and mouse
-            dude.on('pointerdown', onClick);
-
-            // Alternatively, use the mouse & touch events:
-            // sprite.on('click', onClick); // mouse-only
-            // sprite.on('tap', onClick); // touch-only
-
-            app.stage.addChild(sprite);
-
-            function onClick() {
-                if (bol>9){
-                dude.scale.x /= 1.05;
-                dude.scale.y /= 1.05;
- 
-                }
-                else if (bol == 9)
-                {
-                    dude.texture = secondTexture;
-                    
-                } else 
-                {
-                    succeed();
-                }
-                 bol--; 
+        var boxSprites = [];
+        function setup() {
+            boxSprites = [];
+            for (var i=1; i<14; i++) {
+                let box = new PIXI.Sprite(PIXI.loader.resources["assets/images/box"+i+".png"].texture);
+                box.x = app.renderer.view.width/2;
+                box.y = app.renderer.view.height/2;
+                box.anchor.x = 0.5;
+                box.anchor.y = 0.5;
+                box.scale.x = 1-0.05*i;
+                box.scale.y = 1-0.05*i;
+                box.interactive = true;
+                box.buttonMode = true;
+                box.label = i;
+                //change box status
+                box.on("click", function(){
+                    success.play();
+                    if (this.label<13) {
+                        this.visible = false;
+                        app.stage.addChild(boxSprites[this.label]);
+                        boxSprites[this.label].visible = true;
+                    } else {
+                        this.visible = false;
+                        let chocolate = new
+                        PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate.png"].texture);
+                        chocolate.x = app.renderer.view.width/2;
+                        chocolate.y = app.renderer.view.height/2;
+                        chocolate.anchor.x = 0.5;
+                        chocolate.anchor.y = 0.5;
+                        chocolate.scale.x = 1-13*0.05;
+                        chocolate.scale.y = 1-13*0.05;
+                        chocolate.interactive = true;
+                        chocolate.buttonMode = true;
+                        chocolate.on("click", succeed);
+                        app.stage.addChild(chocolate);
+                    };
+                })
+                boxSprites.push(box);
             }
-
-
-
-
+            app.stage.addChild(boxSprites[0]);
+        }
+//            // // create a texture from an image path
+//            const texture =
+//                PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_01.png');
+//
+//            // // create a second texture
+//            const secondTexture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_06.png');
+//
+//            // // create a new Sprite using the texture
+//            //let dude = new PIXI.Sprite(PIXI.loader.resources["assets/images/fuse.png"].texture);
+//            let dude = new PIXI.Sprite(texture);
+//
+//            // // center the sprites anchor point
+//            //dude.anchor.set(0.5);
+//
+//            dude.scale.x *= 2;
+//                dude.scale.y *= 2;
+//
+//            // // move the sprite to the center of the screen
+//            dude.x = 450  ;
+//            dude.y = 230;
+//
+//            app.stage.addChild(dude);
+//
+//            // // make the sprite interactive
+//            dude.interactive = true;
+//            dude.buttonMode = true;
+//
+//            // Pointers normalize touch and mouse
+//            dude.on('pointerdown', onClick);
+//
+//            // Alternatively, use the mouse & touch events:
+//            // sprite.on('click', onClick); // mouse-only
+//            // sprite.on('tap', onClick); // touch-only
+//
+//            app.stage.addChild(sprite);
+//
+//            function onClick() {
+//                if (bol>9){
+//                dude.scale.x /= 1.05;
+//                dude.scale.y /= 1.05;
+//
+//                }
+//                else if (bol == 9)
+//                {
+//                    dude.texture = secondTexture;
+//
+//                } else
+//                {
+//                    succeed();
+//                }
+//                 bol--;
+//            }
         function succeed() {
-        
-        //draw mask
-        let mask = new PIXI.Graphics();
-        mask.beginFill(0x000000, 0.8);
-        mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-        mask.endFill();
-        app.stage.addChild(mask);
-        //draw message
-        let endText = new PIXI.Text('"Happy 6 month anniversary\n\n\n' +
-            'I got a present for you..."\n\n\n' +
-            'I hope you like it"\n\n\nIt is Chocolate and Confections by Peter Grewlings - my favourite chef"');
-        endText.style = {
-            fontFamily: "Arial",
-            fontSize: 40,
-            fill: "white",
-            wordWrap: true,
-            wordWrapWidth: app.renderer.view.width/10*9,
+            finish.play();
+            //draw mask
+            let mask = new PIXI.Graphics();
+            mask.beginFill(0x000000, 0.8);
+            mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+            mask.endFill();
+            app.stage.addChild(mask);
+            //draw message
+            let endText = new PIXI.Text('"Happy 6 month anniversary!\n\n' +
+                'I got a present for you...\n\n' +
+                'I hope you like it.\n\nIt is Chocolate and Confections by Peter Grewlings - my favourite chef."');
+            endText.style = {
+                fontFamily: "Arial",
+                fontSize: 30,
+                fill: "white",
+                wordWrap: true,
+                wordWrapWidth: app.renderer.view.width/10*9,
+            }
+            endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+            //draw continue button
+            let continueBtn = new PIXI.Graphics();
+            continueBtn.beginFill(0x6b432d);
+            continueBtn.drawPolygon([
+                0, 0,             //First point
+                0, 100,              //Second point
+                80, 50                 //Third point
+            ]);
+            continueBtn.endFill();
+            continueBtn.x = app.renderer.view.width/2;
+            continueBtn.y = app.renderer.view.height/4*3;
+            continueBtn.buttonMode = true;
+            continueBtn.interactive = true;
+            continueBtn.on('click', gotoMenu);//TBC
+            //go back to menu
+            function gotoMenu() {
+                window.location.href="menu.html";
+            }
+            //draw restart button
+            let restart = new PIXI.Text("RESTART");
+            restart.style = {
+                fontFamily: "Arial",
+                fontSize: 30,
+                fill: "gray",
+            }
+            restart.x = app.renderer.view.width/5*4;
+            restart.y = app.renderer.view.height/5*4;
+            restart.buttonMode = true;
+            restart.interactive = true;
+            restart.on('click', refresh);
+            function refresh() {
+                location.reload();
+            }
+            app.stage.addChild(mask, endText, continueBtn, restart);
         }
-        endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-        //draw continue button
-        let continueBtn = new PIXI.Graphics();
-        continueBtn.beginFill(0x6b432d);
-        continueBtn.drawPolygon([
-            0, 0,             //First point
-            0, 100,              //Second point
-            80, 50                 //Third point
-        ]);
-        continueBtn.endFill();
-        continueBtn.x = app.renderer.view.width/2;
-        continueBtn.y = app.renderer.view.height/4*3;
-        continueBtn.buttonMode = true;
-        continueBtn.interactive = true;
-        continueBtn.on('click', gotoMenu);//TBC
-        //go back to menu
-        function gotoMenu() {
-            window.location.href="menu.html";
-        }
-        //draw restart button
-        let restart = new PIXI.Text("RESTART");
-        restart.style = {
-            fontFamily: "Arial",
-            fontSize: 30,
-            fill: "gray",
-        }
-        restart.x = app.renderer.view.width/5*4;
-        restart.y = app.renderer.view.height/5*4;
-        restart.buttonMode = true;
-        restart.interactive = true;
-        restart.on('click', refresh);
-        function refresh() {
-            location.reload();
-        }
-        app.stage.addChild(mask, endText, continueBtn, restart);
-    }
-
-
     }
 
 
