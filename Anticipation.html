@@ -26,8 +26,6 @@
     app.renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(app.view);
 
-    
-
     //draw start screen
     //draw mask
     let mask = new PIXI.Graphics();
@@ -60,21 +58,24 @@
         };
 
         //draw instruction
-        let instruction = new PIXI.Text("Click on the panda to uncover the chocolate");
-        instruction.style = {
-            fontFamily: "Arial",
-            fontSize: 20,
-            fill: "white",
-        }
-        instruction.position.set(app.renderer.view.width/5+70, app.renderer.view.height/30);
-        app.stage.addChild(instruction);
+//        let instruction = new PIXI.Text("Click on the panda to uncover the chocolate");
+//        instruction.style = {
+//            fontFamily: "Arial",
+//            fontSize: 20,
+//            fill: "white",
+//        }
+//        instruction.position.set(app.renderer.view.width/5+70, app.renderer.view.height/30);
+//        app.stage.addChild(instruction);
 
          //bol is count btw
          let bol = 15;
 
+        PIXI.loader.add([
+            "assets/images/box1.png",
+        ]).load(setup);
             // // create a texture from an image path
-            const texture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_01.png');
-            l
+            const texture =
+                PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_01.png');
 
 
             // // create a second texture
@@ -139,7 +140,7 @@
         app.stage.addChild(mask);
         //draw message
         let endText = new
-        PIXI.Text('" Hey, I have been looking all over for you."\n\n\n"You had left your books in the class"\n\n\n"My name is Anna by the way."');
+        PIXI.Text('"Hey, I have been looking all over for you."\n\n\n"You had left your books in the class"\n\n\n"My name is Anna by the way."');
         endText.style = {
             fontFamily: "Arial",
             fontSize: 40,
