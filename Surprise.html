@@ -113,7 +113,17 @@
                 fakeHeart.visible = false;
                 //crack once
                 crack.play();
-                instruction.text = "Wait..am I hearing something?";
+                switch(count) {
+                    case 0:
+                        instruction.text = "Wait..am I hearing something?";
+                        break;
+                    case 1:
+                        instruction.text = "No.. not again.";
+                        break;
+                    case 2:
+                        instruction.text = "WTF? What's happening here?";
+                        break;
+                }
                 this.visible = false;
                 let brokenHeart1 = new
                 PIXI.Sprite(PIXI.loader.resources["assets/images/heart1.png"].texture);
@@ -123,7 +133,17 @@
                 //crack 2nd time
                 setTimeout(function(){
                     crack.play();
-                    instruction.text = "What's going on?";
+                    switch(count) {
+                        case 0:
+                            instruction.text = "What's going on?";
+                            break;
+                        case 1:
+                            instruction.text = "Is it something wrong with my material?";
+                            break;
+                        case 2:
+                            instruction.text = "Okay. Something should be wrong.";
+                            break;
+                    }
                     brokenHeart1.visible = false;
                     let brokenHeart2 = new
                     PIXI.Sprite(PIXI.loader.resources["assets/images/heart2.png"].texture);
@@ -133,7 +153,17 @@
                     //crack 3rd time
                     setTimeout(function(){
                         crack.play();
-                        instruction.text = "Is it cracking?!";
+                        switch(count) {
+                            case 0:
+                                instruction.text = "Is it cracking?!";
+                                break;
+                            case 1:
+                                instruction.text = "Oh my god. I'm gonna find another recipe.";
+                                break;
+                            case 2:
+                                instruction.text = "Where are the guys that gave me this?";
+                                break;
+                        }
                         brokenHeart2.visible = false;
                         let brokenHeart3 = new
                         PIXI.Sprite(PIXI.loader.resources["assets/images/heart3.png"].texture);
@@ -143,7 +173,17 @@
                         //crack 4th time
                         setTimeout(function(){
                             crack.play();
-                            instruction.text = "No way..it's broken! I need to start again!";
+                            switch(count) {
+                                case 0:
+                                    instruction.text = "No way..it's broken! I need to start again!";
+                                    break;
+                                case 1:
+                                    instruction.text = "It should work this time. The recipe is from Peter Grewlings.";
+                                    break;
+                                case 2:
+                                    instruction.text = "There's some bug going on. I'm getting scared.";
+                                    break;
+                            }
                             brokenHeart3.visible = false;
                             var brokenHeart4 = new
                             PIXI.Sprite(PIXI.loader.resources["assets/images/heart4.png"].texture);
@@ -155,7 +195,7 @@
                                 count++;
                                 if (count == 3) {
                                     instruction.text =
-                                        "No way..it's broken! I need to start again!\n\n" +
+                                        "I'm going to find the...\n\n" +
                                         "Wait...What's this?";
                                     app.stage.removeChild(brokenHeart4);
                                     let picture = new
