@@ -27,8 +27,9 @@
 
     //Add introductory text
     var message =
-        "Hey man, we're glad you are here. \n\n\nYour wife made you this box of chocolate.\n\n\n" +
-        "Give them a taste. Hope you will feel better..\n\n\n";
+        '"Hey man, we are glad you are here. \n\n\n' +
+        'Your wife made you this box of chocolate.\n\n\n' +
+        'Give them a taste. Hope you will feel better.."\n\n\n';
     let intro = new PIXI.Text();
     intro.style = {
         fontFamily: "Arial",
@@ -38,24 +39,10 @@
         wordWrapWidth: app.renderer.view.width/10*9,
     };
     intro.text = message;
-    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/3);
+    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/5);
 
     //Render text
     app.stage.addChild(intro);
-
-    //Todo: Text effect
-//    window.οnlοad=function(){
-//        var i = 0;
-//        var length = message.length;
-//        setInterval(function(){
-//            intro.text=message.substring(i, i+1);
-//            app.stage.addChild(intro);
-//            i++;
-//            if(i==length){
-//                clearInterval(timer);
-//            }
-//        },200);
-//    }
 
     //add continueBtn
     let continueBtn = new PIXI.Graphics();

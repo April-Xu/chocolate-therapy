@@ -36,6 +36,11 @@
     for (var i=1; i<11; i++) {
         soundSrc.push("assets/sounds/"+i+".wav");
     }
+    var ticking = new PIXI.sound.Sound.from("assets/sounds/ticking1.mp3");
+    const success = new PIXI.sound.Sound.from("assets/sounds/success.wav");
+    const fail = new PIXI.sound.Sound.from("assets/sounds/fail.wav");
+    const explosion = new PIXI.sound.Sound.from("assets/sounds/explosion.mp3");
+    ticking.volume = 2;
 
     //draw start screen
     //draw mask
@@ -76,22 +81,66 @@
         chocolate.y = app.renderer.view.height/10;
         app.stage.addChild(chocolate);
         //draw instruction
-        let instruction = new PIXI.Text("Which one is Cococola Red?");
+        let instruction = new PIXI.Text("Cut the wires in this order to clear the chocolate bomb:");
         instruction.style = {
             fontFamily: "Arial",
-            fontSize: 30,
+            fontSize: 20,
             fill: "white",
         }
-        instruction.position.set(app.renderer.view.width/3, app.renderer.view.height/30);
+        instruction.position.set(app.renderer.view.width/5+70, app.renderer.view.height/30);
         app.stage.addChild(instruction);
-        //draw maze
-        let mazeStage = new PIXI.Container({width: 300, height: 300});
-        mazeStage.x = app.renderer.view.width/19*7;
-        mazeStage.y = app.renderer.view.height/8;
-        app.stage.addChild(mazeStage);
+        //shuffle color codes
+        let colorInstruction = ["Red", "Green", "White", "Blue", "Orange", "Yellow", "Purple",
+            "Pink", "Brown", "Gray"];
+        let tempColor = ["0xFF0000", "0x008000", "0xFFFFFF", "0x0000FF", "0xFFA500", "0xFFFF00",
+            "0x800080", "0xFFC0CB", "0x8B4513", "0x808080"];
+        let color = ["0xFF0000", "0x008000", "0xFFFFFF", "0x0000FF", "0xFFA500", "0xFFFF00",
+            "0x800080", "0xFFC0CB", "0x8B4513", "0x808080"];
+        let colorLeft = ["Red", "Green", "White", "Blue", "Orange", "Yellow", "Purple",
+            "Pink", "Brown", "Gray"];
+        for (i = 1; i < tempColor.length; i++) {
+            const random = Math.floor(Math.random() * (i + 1));
+            [tempColor[i], tempColor[random]] = [tempColor[random], tempColor[i]];
+        }
+        //draw order
+        for (i = 0; i < colorInstruction.length; i++) {
+            let colorText = new PIXI.Text(colorInstruction[i]);
+            colorText.style = {
+                fontFamily: "Arial",
+                fontSize: 20,
+                fill: tempColor[i],
+                width: 80,
+            }
+            colorText.position.set(app.renderer.view.width/5+80*(i+1),
+                app.renderer.view.height/30+20);
+            app.stage.addChild(colorText);
+        }
+        //draw wires
+        var xmin = app.renderer.view.width/5*2+app.renderer.view.width/10-app.renderer.view.width/20*3;
+        var xmax = app.renderer.view.width/5*2+app.renderer.view.width/10+app.renderer.view.width/20*3;
+        for (i = 0; i < colorInstruction.length; i++) {
+            let wire = new PIXI.Graphics();
+            wire.beginFill(color[i]);
+            wire.drawRect(0, 0, 8, Math.floor(Math.random()*50+300));
+            wire.endFill();
+            var wireTexture = app.renderer.generateTexture(wire);
+            var wireSprite = new PIXI.Sprite(wireTexture);
+            wireSprite.anchor.x = 0.5;
+            wireSprite.anchor.y = 0.5;
+            wireSprite.rotation = Math.random()*1.6+2.3;
+            wireSprite.x = Math.floor(Math.random()*(xmax-xmin)+xmin);
+            wireSprite.y = app.renderer.view.height/3;
+            wireSprite.interactive = true;
+            wireSprite.buttonMode = true;
+            wireSprite.color = colorInstruction[i];
+            wireSprite.on("click", function(){
+                checkOrder(this, this.color);
+            });
+            app.stage.addChild(wireSprite);
+        }
+        //draw fuse
         PIXI.loader.add(["assets/images/fuse.png"]).load(setup);
         function setup() {
-            //draw fuse
             let fuse = new PIXI.Sprite(PIXI.loader.resources["assets/images/fuse.png"].texture);
             fuse.scale.x = 0.4;
             fuse.scale.y = 0.4;
@@ -103,7 +152,7 @@
             app.stage.addChild(fuse);
         }
         //draw ticking
-        var time = 61;
+        var time = 30;
         let clock = new PIXI.Text("00 : "+time);
         clock.style = {
             fontFamily: "Arial",
@@ -116,24 +165,63 @@
         var counting = setInterval(function(){
             time --;
             clock.text = "00 : "+time;
-            if (time == 0){
+            if (time<=0){
+                clock.text = "00 : 0";
                 clearInterval(counting);
                 explode();
+            } else if (time <= 3){
+                ticking = new PIXI.sound.Sound.from("assets/sounds/ticking4.mp3");
+                ticking.volume = 3;
+                console.log(ticking.url);
+                ticking.play();
+            } else if (time <= 8){
+                ticking.stop();
+                ticking = new PIXI.sound.Sound.from("assets/sounds/ticking3.mp3");
+                ticking.volume = 3;
+                console.log(ticking.url);
+                ticking.play();
+            } else if (time <= 16){
+                ticking.stop();
+                ticking = new PIXI.sound.Sound.from("assets/sounds/ticking2.mp3");
+                ticking.volume = 3;
+                console.log(ticking.url);
+                ticking.play();
+            } else {
+                ticking.stop();
+                ticking.play();
             }
         },1000);
-        const ticking = new PIXI.sound.Sound.from("assets/sounds/ticking.mp3");
-        ticking.play();
-        const burning = new PIXI.sound.Sound.from("assets/sounds/fuse burning.mp3");
-        burning.play();
+//        const burning = new PIXI.sound.Sound.from("assets/sounds/fuse burning.mp3");
+//        burning.play();
+        //cut wire function
+        function checkOrder(sprite, colorValue){
+            //
+            if (colorLeft[0] == colorValue){
+                success.play();
+                sprite.destroy();
+                app.stage.removeChild(sprite);
+                colorLeft.shift();
+            } else {
+                fail.play();
+                time -= 5;
+                if (time <= 0){
+                    explode();
+                }
+            }
+            if (colorLeft.length == 0) {
+                //draw end screen
+                ticking.stop();
+                clearInterval(counting);
+                succeed();
+            }
+        }
     }
-
-
 
     //explode function
     function explode() {
         //play explode effect
-        const sound = new PIXI.sound.Sound.from("assets/sounds/explosion.mp3");
-        sound.play();
+        ticking.stop();
+        explosion.play();
         //draw mask
         let mask = new PIXI.Graphics();
         mask.beginFill(0x000000, 0.8);
@@ -188,6 +276,61 @@
 
     }
 
+    //level succeed
+    function succeed() {
+        ticking.stop();
+        //draw mask
+        let mask = new PIXI.Graphics();
+        mask.beginFill(0x000000, 0.8);
+        mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+        mask.endFill();
+        app.stage.addChild(mask);
+        //draw message
+        let endText = new
+        PIXI.Text('" Oh I am glad you are still calm.\n\n\nI have a great news for you:\n\n\nShe is a girl! They are waiting for you. Come on."');
+        endText.style = {
+            fontFamily: "Arial",
+            fontSize: 40,
+            fill: "white",
+            wordWrap: true,
+            wordWrapWidth: app.renderer.view.width/10*9,
+        }
+        endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+        //draw continue button
+        let continueBtn = new PIXI.Graphics();
+        continueBtn.beginFill(0x6b432d);
+        continueBtn.drawPolygon([
+            0, 0,             //First point
+            0, 100,              //Second point
+            80, 50                 //Third point
+        ]);
+        continueBtn.endFill();
+        continueBtn.x = app.renderer.view.width/2;
+        continueBtn.y = app.renderer.view.height/4*3;
+        continueBtn.buttonMode = true;
+        continueBtn.interactive = true;
+        continueBtn.on('click', gotoMenu);//TBC
+        //go back to menu
+        function gotoMenu() {
+            window.location.href="menu.html";
+        }
+        //draw restart button
+        let restart = new PIXI.Text("RESTART");
+        restart.style = {
+            fontFamily: "Arial",
+            fontSize: 30,
+            fill: "gray",
+        }
+        restart.x = app.renderer.view.width/5*4;
+        restart.y = app.renderer.view.height/5*4;
+        restart.buttonMode = true;
+        restart.interactive = true;
+        restart.on('click', refresh);
+        function refresh() {
+            location.reload();
+        }
+        app.stage.addChild(mask, endText, continueBtn, restart);
+    }
 </script>
 </body>
 </html>
