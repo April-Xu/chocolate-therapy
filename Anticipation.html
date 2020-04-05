@@ -8,6 +8,191 @@
     <script src="js/pixi-sound.js"></script>
 </head>
 <body>
+    <script type="text/javascript">
+    //Get webgl support
+    let type = "WebGL";
+    if(!PIXI.utils.isWebGLSupported()){
+        type = "canvas"
+    }
+    PIXI.utils.sayHello(type);
+
+    //Create a Pixi Application
+    let app = new PIXI.Application({width: 800, height: 450});
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    //Color palette: brown"#7f3d31", darken brown"#673729"
+    app.renderer.view.style.position = "absolute";
+    app.renderer.view.style.display = "block";
+    app.renderer.autoResize = true;
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    
+
+    //draw start screen
+    //draw mask
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x000000, 0.8);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+    mask.endFill();
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.on("click", startAnticipated);
+    app.stage.addChild(mask);
+
+    //draw message
+    let startText = new
+    PIXI.Text('Its the first week of college \n\n\nand you have already misplaced your textbooks\n\n\nYou see someone running up in your way and\n\n\n......');
+    startText.style = {
+        fontFamily: "Arial",
+        fontSize: 35,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    }
+    startText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+    app.stage.addChild(startText);
+
+    //starts the level
+    function startAnticipated(){
+        //clear stage
+        for (var i = app.stage.children.length - 1; i >= 0; i--) {
+            app.stage.removeChild(app.stage.children[i]);
+        };
+
+        //draw instruction
+        let instruction = new PIXI.Text("Click on the panda to uncover the chocolate");
+        instruction.style = {
+            fontFamily: "Arial",
+            fontSize: 20,
+            fill: "white",
+        }
+        instruction.position.set(app.renderer.view.width/5+70, app.renderer.view.height/30);
+        app.stage.addChild(instruction);
+
+         //bol is count btw
+         let bol = 15;
+
+            // // create a texture from an image path
+            const texture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_01.png');
+            l
+
+
+            // // create a second texture
+            const secondTexture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_06.png');
+
+            // // create a new Sprite using the texture
+            //let dude = new PIXI.Sprite(PIXI.loader.resources["assets/images/fuse.png"].texture);
+            let dude = new PIXI.Sprite(texture);
+
+            // // center the sprites anchor point
+            //dude.anchor.set(0.5);
+
+            dude.scale.x *= 2;
+                dude.scale.y *= 2;
+
+            // // move the sprite to the center of the screen
+            dude.x = 450  ;
+            dude.y = 230;
+
+            app.stage.addChild(dude);
+
+            // // make the sprite interactive
+            dude.interactive = true;
+            dude.buttonMode = true;
+
+            // Pointers normalize touch and mouse
+            dude.on('pointerdown', onClick);
+
+            // Alternatively, use the mouse & touch events:
+            // sprite.on('click', onClick); // mouse-only
+            // sprite.on('tap', onClick); // touch-only
+
+            app.stage.addChild(sprite);
+
+            function onClick() {
+                if (bol>9){
+                dude.scale.x /= 1.05;
+                dude.scale.y /= 1.05;
+ 
+                }
+                else if (bol == 9)
+                {
+                    dude.texture = secondTexture;
+                    
+                } else 
+                {
+                    succeed();
+                }
+                 bol--; 
+            }
+
+
+
+
+        function succeed() {
+        
+        //draw mask
+        let mask = new PIXI.Graphics();
+        mask.beginFill(0x000000, 0.8);
+        mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+        mask.endFill();
+        app.stage.addChild(mask);
+        //draw message
+        let endText = new
+        PIXI.Text('" Hey, I have been looking all over for you."\n\n\n"You had left your books in the class"\n\n\n"My name is Anna by the way."');
+        endText.style = {
+            fontFamily: "Arial",
+            fontSize: 40,
+            fill: "white",
+            wordWrap: true,
+            wordWrapWidth: app.renderer.view.width/10*9,
+        }
+        endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+        //draw continue button
+        let continueBtn = new PIXI.Graphics();
+        continueBtn.beginFill(0x6b432d);
+        continueBtn.drawPolygon([
+            0, 0,             //First point
+            0, 100,              //Second point
+            80, 50                 //Third point
+        ]);
+        continueBtn.endFill();
+        continueBtn.x = app.renderer.view.width/2;
+        continueBtn.y = app.renderer.view.height/4*3;
+        continueBtn.buttonMode = true;
+        continueBtn.interactive = true;
+        continueBtn.on('click', gotoMenu);//TBC
+        //go back to menu
+        function gotoMenu() {
+            window.location.href="menu.html";
+        }
+        //draw restart button
+        let restart = new PIXI.Text("RESTART");
+        restart.style = {
+            fontFamily: "Arial",
+            fontSize: 30,
+            fill: "gray",
+        }
+        restart.x = app.renderer.view.width/5*4;
+        restart.y = app.renderer.view.height/5*4;
+        restart.buttonMode = true;
+        restart.interactive = true;
+        restart.on('click', refresh);
+        function refresh() {
+            location.reload();
+        }
+        app.stage.addChild(mask, endText, continueBtn, restart);
+    }
+
+
+    }
+
+
+
+
+
+
+</script>
 
 </body>
 </html>
