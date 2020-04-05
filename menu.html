@@ -24,6 +24,9 @@
     app.renderer.autoResize = true;
     app.renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(app.view);
+    //add sound track
+    const bg = new PIXI.sound.Sound.from("assets/sounds/bg.mp3");
+    bg.play();
 
     //Add chocolate box
     var levelName=["Joy", "Sadness", "Nervous", "Shy",
