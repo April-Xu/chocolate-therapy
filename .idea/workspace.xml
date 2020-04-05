@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shy.html" afterPath="$PROJECT_DIR$/Shy.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="Surprise.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Surprise.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="82" />
+            <state relative-caret-position="495">
+              <caret line="74" column="109" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="109" />
               <folding>
                 <element signature="e#3772#8759#0" expanded="false" />
               </folding>
@@ -84,7 +83,7 @@
       <file leaf-file-name="Nervous.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Nervous.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="-152">
               <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
               <folding />
             </state>
@@ -94,9 +93,11 @@
       <file leaf-file-name="Shy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="50" column="144" lean-forward="true" selection-start-line="50" selection-start-column="144" selection-end-line="50" selection-end-column="144" />
-              <folding />
+            <state relative-caret-position="1318">
+              <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+              <folding>
+                <element signature="e#3821#5759#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -279,12 +280,12 @@
       <updated>1585598522629</updated>
       <workItem from="1585598524976" duration="1490000" />
       <workItem from="1585604026503" duration="18827000" />
-      <workItem from="1585780001471" duration="49210000" />
+      <workItem from="1585780001471" duration="50149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69527000" />
+    <option name="totallyTimeSpent" value="70466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -467,24 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Surprise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="82" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="82" />
-          <folding>
-            <element signature="e#3772#8759#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Nervous.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -493,11 +476,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Surprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="74" column="109" lean-forward="true" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="109" />
+          <folding>
+            <element signature="e#3772#8759#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nervous.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="39" column="75" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Shy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="50" column="144" lean-forward="true" selection-start-line="50" selection-start-column="144" selection-end-line="50" selection-end-column="144" />
-          <folding />
+        <state relative-caret-position="1318">
+          <caret line="237" column="0" lean-forward="false" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding>
+            <element signature="e#3821#5759#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -8,7 +8,7 @@
     <script src="js/pixi-sound.js"></script>
 </head>
 <body>
-	<script type="text/javascript">
+<script type="text/javascript">
     //Get webgl support
     let type = "WebGL";
     if(!PIXI.utils.isWebGLSupported()){
@@ -60,122 +60,59 @@
     app.stage.addChild(startText);
 
     //starts the level
-    function startShy(){
+    function startShy() {
         //clear stage
         for (var i = app.stage.children.length - 1; i >= 0; i--) {
             app.stage.removeChild(app.stage.children[i]);
-        };
+        }
+        ;
 
 
         // create a texture from an image path
-			const texture = PIXI.Texture.from('https://pixijs.io/examples/examples/assets/rt_object_06.png');
+        PIXI.loader.add("assets/images/chocolate1.png").load(setup);
 
-		// create a new Sprite using the texture
-			let candy = new PIXI.Sprite(texture);
+        function setup() {
+            // create a new Sprite using the texture
+            let candy = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate1.png"].texture);
 
-			candy.x = app.renderer.view.width/3+150;
-			candy.y = app.renderer.view.height/3;
+            candy.anchor.set(0.5, 0.5);
+            candy.scale.set(0.2, 0.2);
+            candy.x = app.renderer.view.width / 3 + 150;
+            candy.y = app.renderer.view.height / 3;
 
-		app.stage.addChild(candy);
+            app.stage.addChild(candy);
 
-// designate candy as being interactive so it handles events
-		candy.buttonMode = false;
-		candy.interactive = true;
+            // designate candy as being interactive so it handles events
+            candy.buttonMode = true;
+            candy.interactive = true;
 
-
-
-let counter = 0;
-var i = 800;
-let j = 400;
-//app.ticker.add(update);
+            //let counter = 0;
+            var i = 800;
+            let j = 400;
+            //app.ticker.add(update);
 
 
-// // make circle non-transparent when mouse is over it
- candy.mouseover = function(mouseData) {
- 		if (counter<10){
- 			// var newx = (Math.sin(Math.random()) * i);
- 			// var newy = (Math.sin(Math.random()) * j);
- 			// candy.x = Math.floor(newx) + (candy.x-newx);
- 			// candy.y = Math.floor(newy)+ (candy.y-newy);
- 			candy.x += (Math.sin(Math.random()-0.5) * i);
- 			candy.y += (Math.sin(Math.random()-0.5) * j);
-
-    } else {
-    	succeed();
-    }
-    counter++;
-    i *= 0.5;
-    j *= 0.5;
-} 
-
-//tremble effect
-    function tremble() {
-        //count++;
-        //prevent player from clicking on the chocolate
-        mask.buttonMode = false;
-        mask.interactive = false;
-       
-        //draw slices
-        var slices = [];
-        var amount = Math.floor(Math.random() * (15 - 8) ) + 8;
-        for (var i=0; i<amount+1; i++) {
-            //init slices
-            let slice = new PIXI.Graphics();
-            slice.beginFill(0x673729);
-            slice.drawPolygon([
-                0, 0,
-                20, 60,
-                50, 40,
-            ]);
-            var angle = Math.floor(Math.random() * 360);
-            var size = Math.random()+0.8;
-            slice.rotation = angle;
-            slice.scale.x = size;
-            slice.scale.y = size;
-            slice.x = Math.floor(Math.random() * (xmax - xmin) ) + xmin;
-            slice.y = 100;
-            slices.push(slice);
-            app.stage.addChild(slice);
-        }
-        //slices dropping & shaking
-        var arr = [];
-        var num = 0;
-        for(var i=20;i>0;i-=2){
-            arr.push(i,-i);
-        }
-
-        timer = setInterval(function(){
-            for (i=0; i<slices.length; i++) {
-                slices[i].y+=50;
+            // // make circle non-transparent when mouse is over it
+            candy.mouseover = function (mouseData) {
+                candy.x += (Math.sin(Math.random() - 0.5) * i);
+                candy.y += (Math.sin(Math.random() - 0.5) * j);
+                if (candy.x<=0) candy.x = 0;
+                if (candy.x>=app.renderer.view.width) candy.x = candy.x>=app.renderer.view.width;
+                if (candy.y<=0) candy.y = 0;
+                if (candy.y>=app.renderer.view.height) candy.y = app.renderer.view.height;
+                //counter++;
+                i *= 0.9;
+                j *= 0.9;
             }
-            //graphics.x += arr[num];
-            num ++;
-            
-        },100);
-        mask.buttonMode = true;
-        mask.interactive = true;
+
+            //circle clickable
+            candy.on("click", function(){
+                succeed();
+            })
+        }
     }
 
-	// function update() {
-	//   if(graphics.x < 0 | graphics.x >= 800- graphics.width) {
-	//     graphics.velocity.x *= -1;
-	//   } 
-	  
-	//   if(graphics.y < 0 | graphics.y >= app.screen.height - 100) {
-	//     graphics.velocity.y *= -1;
-	//   } 
-	//   // If the green square pops out of the cordon, it pops back into the
-	//     // middle
-	//     if ((graphics.x < -30 || graphics.x > (app.screen.width + 30))
-	//         || graphics.y < -30 || graphics.y > (app.screen.height + 30)) {
-	//         graphics.position.set((Math.random()+0.8), 100);
-	//     }   
-	//   if (counter>0){
-	// 	  graphics.x += graphics.velocity.x;
-	// 	  graphics.y += graphics.velocity.y+2; }
-	// 	}
-		function succeed() {
-		
+    function succeed() {
         //draw mask
         let mask = new PIXI.Graphics();
         mask.beginFill(0x000000, 0.8);
@@ -184,7 +121,7 @@ let j = 400;
         app.stage.addChild(mask);
         //draw message
         let endText = new
-        PIXI.Text('" Hey, I have been looking all over for you."\n\n\n"You had left your books in the class"\n\n\n"My name is Anna by the way."');
+        PIXI.Text('" Hey, I finally catch you."\n\n\n"You had left your books in the class"\n\n\n"My name is Anna by the way."');
         endText.style = {
             fontFamily: "Arial",
             fontSize: 40,
@@ -229,10 +166,76 @@ let j = 400;
         app.stage.addChild(mask, endText, continueBtn, restart);
     }
 
+//tremble effect
+//    function tremble() {
+//        //count++;
+//        //prevent player from clicking on the chocolate
+//        mask.buttonMode = false;
+//        mask.interactive = false;
+//
+//        //draw slices
+//        var slices = [];
+//        var amount = Math.floor(Math.random() * (15 - 8) ) + 8;
+//        for (var i=0; i<amount+1; i++) {
+//            //init slices
+//            let slice = new PIXI.Graphics();
+//            slice.beginFill(0x673729);
+//            slice.drawPolygon([
+//                0, 0,
+//                20, 60,
+//                50, 40,
+//            ]);
+//            var angle = Math.floor(Math.random() * 360);
+//            var size = Math.random()+0.8;
+//            slice.rotation = angle;
+//            slice.scale.x = size;
+//            slice.scale.y = size;
+//            slice.x = Math.floor(Math.random() * (xmax - xmin) ) + xmin;
+//            slice.y = 100;
+//            slices.push(slice);
+//            app.stage.addChild(slice);
+//        }
+//        //slices dropping & shaking
+//        var arr = [];
+//        var num = 0;
+//        for(var i=20;i>0;i-=2){
+//            arr.push(i,-i);
+//        }
+//
+//        timer = setInterval(function(){
+//            for (i=0; i<slices.length; i++) {
+//                slices[i].y+=50;
+//            }
+//            //graphics.x += arr[num];
+//            num ++;
+//
+//        },100);
+//        mask.buttonMode = true;
+//        mask.interactive = true;
+//    }
+//
+//	// function update() {
+//	//   if(graphics.x < 0 | graphics.x >= 800- graphics.width) {
+//	//     graphics.velocity.x *= -1;
+//	//   }
+//
+//	//   if(graphics.y < 0 | graphics.y >= app.screen.height - 100) {
+//	//     graphics.velocity.y *= -1;
+//	//   }
+//	//   // If the green square pops out of the cordon, it pops back into the
+//	//     // middle
+//	//     if ((graphics.x < -30 || graphics.x > (app.screen.width + 30))
+//	//         || graphics.y < -30 || graphics.y > (app.screen.height + 30)) {
+//	//         graphics.position.set((Math.random()+0.8), 100);
+//	//     }
+//	//   if (counter>0){
+//	// 	  graphics.x += graphics.velocity.x;
+//	// 	  graphics.y += graphics.velocity.y+2; }
+//	// 	}
+//
+//    }
 
-    }
-
-	</script>
+</script>
 
 </body>
 </html>
