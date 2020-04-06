@@ -124,13 +124,74 @@
                         chocolate.scale.y = 1-13*0.05;
                         chocolate.interactive = true;
                         chocolate.buttonMode = true;
-                        chocolate.on("click", succeed);
+                        chocolate.on("click", function(){
+                            succeed(this);
+                        });
                         app.stage.addChild(chocolate);
                     };
                 })
                 boxSprites.push(box);
             }
             app.stage.addChild(boxSprites[0]);
+
+            //the game ends
+            function succeed(item) {
+                item.interactive = false;
+                item.buttonMode = false;
+                finish.play();
+                //draw mask
+                let mask = new PIXI.Graphics();
+                mask.beginFill(0x000000, 0.8);
+                mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+                mask.endFill();
+                app.stage.addChild(mask);
+                //draw message
+                let endText = new PIXI.Text('"Happy 6 month anniversary!\n\n' +
+                    'I got a present for you...\n\n' +
+                    'I hope you like it.\n\nIt is Chocolate and Confections by Peter Grewlings - my favourite chef."');
+                endText.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "white",
+                    wordWrap: true,
+                    wordWrapWidth: app.renderer.view.width/10*9,
+                }
+                endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+                //draw continue button
+                let continueBtn = new PIXI.Graphics();
+                continueBtn.beginFill(0x6b432d);
+                continueBtn.drawPolygon([
+                    0, 0,             //First point
+                    0, 100,              //Second point
+                    80, 50                 //Third point
+                ]);
+                continueBtn.endFill();
+                continueBtn.x = app.renderer.view.width/2;
+                continueBtn.y = app.renderer.view.height/4*3;
+                continueBtn.buttonMode = true;
+                continueBtn.interactive = true;
+                continueBtn.on('click', gotoMenu);//TBC
+                //go back to menu
+                function gotoMenu() {
+                    window.location.href="menu.html?a=7";
+                }
+                //draw restart button
+                let restart = new PIXI.Text("RESTART");
+                restart.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "gray",
+                }
+                restart.x = app.renderer.view.width/5*4;
+                restart.y = app.renderer.view.height/5*4;
+                restart.buttonMode = true;
+                restart.interactive = true;
+                restart.on('click', refresh);
+                function refresh() {
+                    location.reload();
+                }
+                app.stage.addChild(mask, endText, continueBtn, restart);
+            }
         }
 //            // // create a texture from an image path
 //            const texture =
@@ -184,61 +245,6 @@
 //                }
 //                 bol--;
 //            }
-        function succeed() {
-            finish.play();
-            //draw mask
-            let mask = new PIXI.Graphics();
-            mask.beginFill(0x000000, 0.8);
-            mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-            mask.endFill();
-            app.stage.addChild(mask);
-            //draw message
-            let endText = new PIXI.Text('"Happy 6 month anniversary!\n\n' +
-                'I got a present for you...\n\n' +
-                'I hope you like it.\n\nIt is Chocolate and Confections by Peter Grewlings - my favourite chef."');
-            endText.style = {
-                fontFamily: "Arial",
-                fontSize: 30,
-                fill: "white",
-                wordWrap: true,
-                wordWrapWidth: app.renderer.view.width/10*9,
-            }
-            endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-            //draw continue button
-            let continueBtn = new PIXI.Graphics();
-            continueBtn.beginFill(0x6b432d);
-            continueBtn.drawPolygon([
-                0, 0,             //First point
-                0, 100,              //Second point
-                80, 50                 //Third point
-            ]);
-            continueBtn.endFill();
-            continueBtn.x = app.renderer.view.width/2;
-            continueBtn.y = app.renderer.view.height/4*3;
-            continueBtn.buttonMode = true;
-            continueBtn.interactive = true;
-            continueBtn.on('click', gotoMenu);//TBC
-            //go back to menu
-            function gotoMenu() {
-                window.location.href="menu.html?a=7";
-            }
-            //draw restart button
-            let restart = new PIXI.Text("RESTART");
-            restart.style = {
-                fontFamily: "Arial",
-                fontSize: 30,
-                fill: "gray",
-            }
-            restart.x = app.renderer.view.width/5*4;
-            restart.y = app.renderer.view.height/5*4;
-            restart.buttonMode = true;
-            restart.interactive = true;
-            restart.on('click', refresh);
-            function refresh() {
-                location.reload();
-            }
-            app.stage.addChild(mask, endText, continueBtn, restart);
-        }
     }
 
 
