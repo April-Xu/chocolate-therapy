@@ -293,7 +293,7 @@
                 setup.currFire.visible = true;
                 setup.currFire = fires[setup.it++];
                 setup.timeStep -= 1000; //interval of fire spawn decreases gradually
-                if (sliceCount > 1 || setup.timeStep < 1001) { // begin of second phase; conditional could be changed to certain player hit to the chocolate
+                if (sliceCount > 3 || setup.timeStep < 1001) { // begin of second phase; conditional could be changed to certain player hit to the chocolate
                     initPhase2 = true;
                 }
             }
@@ -310,7 +310,7 @@
                 fires[pick].y = Math.random() * app.renderer.view.width / 10 * 3;
                 fires[pick].scale.set((Math.random()+4), (Math.random()+4));
                 phase2Counter ++;
-                if(sliceCount > 3 || phase2Counter > 8){
+                if(sliceCount > 5 || phase2Counter > 8){
                     initPhase3 = true;
                 }
             }
@@ -329,7 +329,7 @@
             }
 
 
-        }if(sliceCount == 15){initEnd = true}
+        }if(sliceCount == 10){initEnd = true}
         // console.log(delta);
         // console.log(Math.floor(delta * 10 * app.ticker.deltaTime  % 32 ));
         fires.forEach(f => {
@@ -355,6 +355,9 @@
         };
 
         function startPhase2(setup) {
+            // const manScream = new PIXI.sound.Sound.from('assets/sounds/manscream.mp3');
+            // manScream.volume = .5;
+            // manScream.play();
             burnSound.volume += .1;
             setup.it = 0;
             setup.currFire = fires[setup.it];
@@ -448,7 +451,7 @@
     }
 
     update = setInterval(function(){
-        if (sliceCount==15) {
+        if (sliceCount==10) {
             clearInterval(update);
             // pause interaction
             chocolate.buttonMode = false;
@@ -465,13 +468,7 @@
                 app.stage.addChild(mask);
                 //draw message
                 let endText = new
-                PIXI.Text(`Why can't you just pick me up at the mall?
-
-
-                What is going on? Why are you still here?
-
-
-                I don't want to talk to you anymore!`);
+                PIXI.Text(`Why can't you just pick me up at the mall?\n\n\nWhat is going on? Why are you still here?\n\n\nI don't want to talk to you anymore!`);
                 endText.style = {
                     fontFamily: "Arial",
                     fontSize: 40,
