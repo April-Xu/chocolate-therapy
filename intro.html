@@ -25,65 +25,90 @@
     app.renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(app.view);
 
+
+    PIXI.loader.add([
+        "assets/images/note.png",
+        "assets/images/chocolate box.png"
+    ]).load(setup);
+
+    function setup() {
+        let box = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate box.png"].texture);
+        box.anchor.set(0.5, 0.5);
+        box.scale.set(0.4, 0.4);
+        box.x = app.renderer.view.width/2;
+        box.y = app.renderer.view.height/2;
+        box.interactive = true;
+        box.buttonMode = true;
+        box.on("click", function(){
+            this.visible = false;
+            let note = new PIXI.Sprite(PIXI.loader.resources["assets/images/note.png"].texture);
+            note.anchor.set(0.5, 0.5);
+            note.scale.set(0.4, 0.4);
+            note.x = app.renderer.view.width/2;
+            note.y = app.renderer.view.height/2;
+            app.stage.addChild(note);
+            //add continueBtn
+            let continueBtn = new PIXI.Graphics();
+            continueBtn.beginFill(0x6b432d);
+            //Use `drawPolygon` to define the continueBtn as
+            //a path array of x/y positions
+            continueBtn.drawPolygon([
+                0, 0,             //First point
+                0, 64,              //Second point
+                50, 32                 //Third point
+            ]);
+            //Fill shape's color
+            continueBtn.endFill();
+            //Position the continueBtn after you've drawn it.
+            //The continueBtn's x/y position is anchored to its first point in the path
+            continueBtn.x = app.renderer.view.width/5*4;
+            continueBtn.y = app.renderer.view.height/4*3;
+            continueBtn.buttonMode = true;
+            continueBtn.interactive = true;
+            continueBtn.on('click', gotoMenu);
+            function gotoMenu() {
+                window.location.href="menu.html?joy=1&sadness=0&nervous=0&shy=0&anger=0&anticipation=0&surprise=0";
+            }
+
+            //add backBtn
+//            let backBtn = new PIXI.Text("BACK");
+//            backBtn.style = {
+//                fontFamily: "Arial",
+//                fontSize: 30,
+//                fill: "gray",
+//            }
+//            backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+//            backBtn.buttonMode = true;
+//            backBtn.interactive = true;
+//            backBtn.on('click', goBack);
+//            function goBack() {
+//                window.location.href="index.html";
+//            }
+
+            //render buttons
+            app.stage.addChild(continueBtn);
+        })
+        app.stage.addChild(box);
+
+    }
     //Add introductory text
-    var message =
-        '"Hey man, we are glad you are here. \n\n\n' +
-        'Your wife made you this box of chocolate.\n\n\n' +
-        'Give them a taste. Hope you will feel better.."\n\n\n';
-    let intro = new PIXI.Text();
-    intro.style = {
-        fontFamily: "Arial",
-        fontSize: 30,
-        fill: "white",
-        wordWrap: true,
-        wordWrapWidth: app.renderer.view.width/10*9,
-    };
-    intro.text = message;
-    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/5);
-
-    //Render text
-    app.stage.addChild(intro);
-
-    //add continueBtn
-    let continueBtn = new PIXI.Graphics();
-    continueBtn.beginFill(0x6b432d);
-    //Use `drawPolygon` to define the continueBtn as
-    //a path array of x/y positions
-    continueBtn.drawPolygon([
-        0, 0,             //First point
-        0, 64,              //Second point
-        50, 32                 //Third point
-    ]);
-    //Fill shape's color
-    continueBtn.endFill();
-    //Position the continueBtn after you've drawn it.
-    //The continueBtn's x/y position is anchored to its first point in the path
-    continueBtn.x = app.renderer.view.width/5*4;
-    continueBtn.y = app.renderer.view.height/4*3;
-    continueBtn.buttonMode = true;
-    continueBtn.interactive = true;
-    continueBtn.on('click', gotoMenu);
-    function gotoMenu() {
-        window.location.href="menu.html";
-    }
-
-    //add backBtn
-    let backBtn = new PIXI.Text("BACK");
-    backBtn.style = {
-        fontFamily: "Arial",
-        fontSize: 30,
-        fill: "gray",
-    }
-    backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
-    backBtn.buttonMode = true;
-    backBtn.interactive = true;
-    backBtn.on('click', goBack);
-    function goBack() {
-        window.location.href="index.html";
-    }
-
-    //render buttons
-    app.stage.addChild(continueBtn, backBtn);
+//    var message =
+//        '"Hey man, we are glad you are here. \n\n\n' +
+//        'Your wife made you this box of chocolate.\n\n\n' +
+//        'Give them a taste. Hope you will feel better.."\n\n\n';
+//    let intro = new PIXI.Text();
+//    intro.style = {
+//        fontFamily: "Arial",
+//        fontSize: 30,
+//        fill: "white",
+//        wordWrap: true,
+//        wordWrapWidth: app.renderer.view.width/10*9,
+//    };
+//    intro.text = message;
+//    intro.position.set(app.renderer.view.width/4, app.renderer.view.height/5);
+//
+//    //Render text
+//    app.stage.addChild(intro);
 
 
 </script>

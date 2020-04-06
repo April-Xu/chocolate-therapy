@@ -5,6 +5,7 @@
     <title>Chocolate Therapy</title>
     <style>* {padding: 0; margin: 0}</style>
     <script src="js/pixi.min.js"></script>
+    <script src="js/pixi-sound.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -24,6 +25,9 @@
     app.renderer.autoResize = true;
     app.renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(app.view);
+    //add sound track
+    const bg = new PIXI.sound.Sound.from("assets/sounds/bg.mp3");
+    bg.play();
 
     //Add chocolate box
     var levelName=["Joy", "Sadness", "Nervous", "Shy",
