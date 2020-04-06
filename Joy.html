@@ -36,6 +36,8 @@
     for (var i=1; i<11; i++) {
         soundSrc.push("assets/sounds/"+i+".wav");
     }
+    const bg = new PIXI.sound.Sound.from("assets/sounds/happy-ukulele.mp3");
+    bg.play();
 
     //draw chocolate
     let chocolate = new PIXI.Graphics();
