@@ -13,6 +13,7 @@
     var href = location.href;
     eval("var " + href.substring(href.indexOf("?") + 1) + ";");
     var visibility = a;
+    //var visibility = 7; //this is for layout test
 
     //Get webgl support
     let type = "WebGL";
@@ -34,95 +35,154 @@
     const bg = new PIXI.sound.Sound.from("assets/sounds/bg.mp3");
     bg.play();
 
-    //Add chocolate box
-    var levelName=["Joy", "Sadness", "Nervous", "Shy",
-        "Anger", "Anticipation"];
-    //draw first 6 level
-    for (var i=0; i<6;i++) {
-        let rectangle = new PIXI.Graphics();
-        let level = new PIXI.Text(levelName[i]);
-        rectangle.lineStyle(4, 0xFFFFFF, 1);
-        rectangle.drawRect(0, 0, 240, 150);
-        rectangle.endFill();
-        rectangle.x = app.renderer.view.width/4+(Math.floor(i%3))*240;
-        rectangle.y = app.renderer.view.height/10+(Math.floor(i/3))*150;
+    PIXI.loader.add([
+        "assets/images/normal chocolate.png",
+        "assets/images/final chocolate.png"
+    ]).load(setup);
+
+    function setup(){
+        //Add chocolate box
+        var levelName=["Joy", "Sadness", "Nervous", "Shy",
+            "Anger", "Anticipation"];
+        //draw first 6 level
+        for (var i=0; i<6;i++) {
+            let normalLevel = new
+            PIXI.Sprite(PIXI.loader.resources["assets/images/normal chocolate.png"].texture);
+            normalLevel.anchor.set(0.5, 0.5);
+            normalLevel.position.set(app.renderer.view.width/4+i%3*app.renderer.view.width/5,
+                app.renderer.view.height/4*(2*Math.floor(i/3)+1));
+            normalLevel.scale.set(0.2, 0.2);
+            let level = new PIXI.Text(levelName[i]);
+            level.style = {
+                fontFamily: "Arial",
+                fontSize: 36,
+                fill: "white",
+            };
+            level.anchor.set(0.5, 0.5);
+            level.position.set(app.renderer.view.width/4+i%3*app.renderer.view.width/5,
+                app.renderer.view.height/4*(2*Math.floor(i/3)+1));
+            level.buttonMode = true;
+            level.interactive = true;
+            level.on('click', function(){
+                window.location.href = this.text+".html";
+            });
+            app.stage.addChild(normalLevel, level);
+            level.visible = false;
+            switch(i){
+                case 0:
+                    if (visibility>=1) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+                case 1:
+                    if (visibility>=2) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+                case 2:
+                    if (visibility>=3) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+                case 3:
+                    if (visibility>=4) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+                case 4:
+                    if (visibility>=5) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+                case 5:
+                    if (visibility>=6) {
+                        level.visible = true;
+                        normalLevel.interactive = true;
+                        normalLevel.buttonMode = true;
+                        normalLevel.label = level.text;
+                        normalLevel.on("click", function(){
+                            window.location.href = this.label+".html";
+                        })
+                    }
+                    break;
+            }
+        }
+        //draw the last level
+        let finalLevel = new
+        PIXI.Sprite(PIXI.loader.resources["assets/images/final chocolate.png"].texture);
+        finalLevel.anchor.set(0.5, 0.5);
+        finalLevel.position.set(app.renderer.view.width/7*6,
+            app.renderer.view.height/2);
+        finalLevel.scale.set(0.25, 0.25);
+        let level = new PIXI.Text('"Surprise"');
         level.style = {
             fontFamily: "Arial",
             fontSize: 45,
-            fill: "#6b432d",
+            fill: "white",
         };
-        level.position.set(app.renderer.view.width/17*5+(Math.floor(i%3))*210,
-            app.renderer.view.height/10+(Math.floor(i/3))*150+40);
+        level.anchor.set(0.5, 0.5);
+        level.position.set(app.renderer.view.width/7*6,
+            app.renderer.view.height/2);
         level.buttonMode = true;
         level.interactive = true;
         level.on('click', function(){
-            window.location.href = this.text+".html";
+            window.location.href="Surprise.html";
         });
-        app.stage.addChild(rectangle, level);
-        level.visible = false;
-        switch(i){
-            case 0:
-                if (visibility>=1) level.visible = true;
-                break;
-            case 1:
-                if (visibility>=2) level.visible = true;
-                break;
-            case 2:
-                if (visibility>=3) level.visible = true;
-                break;
-            case 3:
-                if (visibility>=4) level.visible = true;
-                break;
-            case 4:
-                if (visibility>=5) level.visible = true;
-                break;
-            case 5:
-                if (visibility>=6) level.visible = true;
-                break;
+        if (visibility>=7) {
+            finalLevel.visible = true;
+            level.visible = true;
+        } else {
+            finalLevel.visible = false;
+            level.visible = false;
         }
-    }
-    //draw the last level
-    let rectangle = new PIXI.Graphics();
-    let level = new PIXI.Text('"Surprise"');
-    rectangle.lineStyle(4, 0xFFFFFF, 1);
-    rectangle.drawRect(0, 0, 720, 150);
-    rectangle.endFill();
-    rectangle.x = app.renderer.view.width/4;
-    rectangle.y = app.renderer.view.height/10+300;
-    level.style = {
-        fontFamily: "Arial",
-        fontSize: 45,
-        fill: "#6b432d",
-    };
-    level.position.set(app.renderer.view.width/4+230,
-        app.renderer.view.height/10+340);
-    level.buttonMode = true;
-    level.interactive = true;
-    level.on('click', function(){
-        window.location.href="Surprise.html";
-    });
-    if (visibility>=7) {
-        level.visible = true;
-    } else {
-        level.visible = false;
-    }
-    app.stage.addChild(rectangle, level);
+        app.stage.addChild(finalLevel, level);
 
-    //add back
-    let backBtn = new PIXI.Text("BACK");
-    backBtn.style = {
-        fontFamily: "Arial",
-        fontSize: 30,
-        fill: "gray",
+        //add back
+        let backBtn = new PIXI.Text("BACK");
+        backBtn.style = {
+            fontFamily: "Arial",
+            fontSize: 30,
+            fill: "gray",
+        }
+        backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
+        backBtn.buttonMode = true;
+        backBtn.interactive = true;
+        backBtn.on('click', goBack);
+        function goBack() {
+            window.location.href="index.html";
+        }
+        app.stage.addChild(backBtn);
     }
-    backBtn.position.set(app.renderer.view.width/10, app.renderer.view.height/5*4);
-    backBtn.buttonMode = true;
-    backBtn.interactive = true;
-    backBtn.on('click', goBack);
-    function goBack() {
-        window.location.href="intro.html";
-    }
-    app.stage.addChild(backBtn);
 </script>
 </body>
 </html>

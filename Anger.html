@@ -451,7 +451,7 @@
     }
 
     update = setInterval(function(){
-        if (sliceCount==10) {
+        if (sliceCount==7) {
             clearInterval(update);
             // pause interaction
             chocolate.buttonMode = false;
@@ -469,7 +469,7 @@
                 app.stage.addChild(mask);
                 //draw message
                 let endText = new
-                PIXI.Text(`Why can't you just pick me up at the mall?\n\n\nWhat is going on? Why are you still here?\n\n\nI don't want to talk to you anymore!`);
+                PIXI.Text(`"Why can't you just pick me up at the mall?\n\n\nWhat is going on? Why are you still here?\n\n\nI don't want to talk to you anymore!"`);
                 endText.style = {
                     fontFamily: "Arial",
                     fontSize: 40,
@@ -509,7 +509,7 @@
                 continueBtn.on('click', gotoMenu);//TBC
                 //go back to menu
                 function gotoMenu() {
-                    window.location.href="menu.html";
+                    window.location.href="menu.html?a=6";
                 }
                 //draw restart button
                 let restart = new PIXI.Text("RESTART");

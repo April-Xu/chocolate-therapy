@@ -107,66 +107,69 @@
 
             //circle clickable
             candy.on("click", function(){
-                succeed();
+                end();
             })
+
+            //when game ends
+            function end() {
+                candy.interactive = false;
+                candy.buttonMode = false;
+                //draw mask
+                let mask = new PIXI.Graphics();
+                mask.beginFill(0x000000, 0.8);
+                mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+                mask.endFill();
+                app.stage.addChild(mask);
+                //draw message
+                let endText = new
+                PIXI.Text('" Hey, I finally catch you.\n\n\nYou had left your books in the class\n\n\nMy name is Anna by the way."');
+                endText.style = {
+                    fontFamily: "Arial",
+                    fontSize: 40,
+                    fill: "white",
+                    wordWrap: true,
+                    wordWrapWidth: app.renderer.view.width/10*9,
+                }
+                endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+                //draw continue button
+                let continueBtn = new PIXI.Graphics();
+                continueBtn.beginFill(0x6b432d);
+                continueBtn.drawPolygon([
+                    0, 0,             //First point
+                    0, 100,              //Second point
+                    80, 50                 //Third point
+                ]);
+                continueBtn.endFill();
+                continueBtn.x = app.renderer.view.width/2;
+                continueBtn.y = app.renderer.view.height/4*3;
+                continueBtn.buttonMode = true;
+                continueBtn.interactive = true;
+                continueBtn.on('click', gotoMenu);//TBC
+                //go back to menu
+                function gotoMenu() {
+                    window.location.href="menu.html?a=5";
+                }
+                //draw restart button
+                let restart = new PIXI.Text("RESTART");
+                restart.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "gray",
+                }
+                restart.x = app.renderer.view.width/5*4;
+                restart.y = app.renderer.view.height/5*4;
+                restart.buttonMode = true;
+                restart.interactive = true;
+                restart.on('click', refresh);
+                function refresh() {
+                    location.reload();
+                }
+                app.stage.addChild(mask, endText, continueBtn, restart);
+            }
         }
     }
 
-    function succeed() {
-        candy.interactive = false;
-        candy.buttonMode = false;
-        //draw mask
-        let mask = new PIXI.Graphics();
-        mask.beginFill(0x000000, 0.8);
-        mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-        mask.endFill();
-        app.stage.addChild(mask);
-        //draw message
-        let endText = new
-        PIXI.Text('" Hey, I finally catch you.\n\n\nYou had left your books in the class\n\n\nMy name is Anna by the way."');
-        endText.style = {
-            fontFamily: "Arial",
-            fontSize: 40,
-            fill: "white",
-            wordWrap: true,
-            wordWrapWidth: app.renderer.view.width/10*9,
-        }
-        endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-        //draw continue button
-        let continueBtn = new PIXI.Graphics();
-        continueBtn.beginFill(0x6b432d);
-        continueBtn.drawPolygon([
-            0, 0,             //First point
-            0, 100,              //Second point
-            80, 50                 //Third point
-        ]);
-        continueBtn.endFill();
-        continueBtn.x = app.renderer.view.width/2;
-        continueBtn.y = app.renderer.view.height/4*3;
-        continueBtn.buttonMode = true;
-        continueBtn.interactive = true;
-        continueBtn.on('click', gotoMenu);//TBC
-        //go back to menu
-        function gotoMenu() {
-            window.location.href="menu.html?a=5";
-        }
-        //draw restart button
-        let restart = new PIXI.Text("RESTART");
-        restart.style = {
-            fontFamily: "Arial",
-            fontSize: 30,
-            fill: "gray",
-        }
-        restart.x = app.renderer.view.width/5*4;
-        restart.y = app.renderer.view.height/5*4;
-        restart.buttonMode = true;
-        restart.interactive = true;
-        restart.on('click', refresh);
-        function refresh() {
-            location.reload();
-        }
-        app.stage.addChild(mask, endText, continueBtn, restart);
-    }
+
 
 //tremble effect
 //    function tremble() {
