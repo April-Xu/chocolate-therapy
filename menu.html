@@ -9,6 +9,11 @@
 </head>
 <body>
 <script type="text/javascript">
+    //get visibility
+    var href = location.href;
+    eval("var " + href.substring(href.indexOf("?") + 1) + ";");
+    var visibility = a;
+
     //Get webgl support
     let type = "WebGL";
     if(!PIXI.utils.isWebGLSupported()){
@@ -54,6 +59,27 @@
             window.location.href = this.text+".html";
         });
         app.stage.addChild(rectangle, level);
+        level.visible = false;
+        switch(i){
+            case 0:
+                if (visibility>=1) level.visible = true;
+                break;
+            case 1:
+                if (visibility>=2) level.visible = true;
+                break;
+            case 2:
+                if (visibility>=3) level.visible = true;
+                break;
+            case 3:
+                if (visibility>=4) level.visible = true;
+                break;
+            case 4:
+                if (visibility>=5) level.visible = true;
+                break;
+            case 5:
+                if (visibility>=6) level.visible = true;
+                break;
+        }
     }
     //draw the last level
     let rectangle = new PIXI.Graphics();
@@ -75,6 +101,11 @@
     level.on('click', function(){
         window.location.href="Surprise.html";
     });
+    if (visibility>=7) {
+        level.visible = true;
+    } else {
+        level.visible = false;
+    }
     app.stage.addChild(rectangle, level);
 
     //add back

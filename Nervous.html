@@ -152,7 +152,7 @@
             app.stage.addChild(fuse);
         }
         //draw ticking
-        var time = 30;
+        var time = 50;
         let clock = new PIXI.Text("00 : "+time);
         clock.style = {
             fontFamily: "Arial",
@@ -229,7 +229,7 @@
         mask.endFill();
         // draw message
         let endText = new
-        PIXI.Text("You passed out.\n\n\n In a long time of unconsciousness, \n\n\nyou don't really know what happened after the baby comes.");
+        PIXI.Text("You passed out.\n\n\nIn a long time of unconsciousness, \n\n\nyou don't really know what happened after the baby comes.");
         endText.style = {
             fontFamily: "Arial",
             fontSize: 35,
@@ -254,8 +254,7 @@
         continueBtn.on('click', gotoMenu);//TBC
         //go back to menu
         function gotoMenu() {
-            //window.location.href="menu.html";
-            window.location.href="Shy.html";
+            window.location.href="menu.html?a=4";
         }
         //draw restart button
         let restart = new PIXI.Text("RESTART");
@@ -313,8 +312,7 @@
         continueBtn.on('click', gotoMenu);//TBC
         //go back to menu
         function gotoMenu() {
-            //window.location.href="menu.html";
-            window.location.href="Shy.html";
+            window.location.href="menu.html?a=4";
         }
         //draw restart button
         let restart = new PIXI.Text("RESTART");

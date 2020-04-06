@@ -37,6 +37,7 @@
         soundSrc.push("assets/sounds/"+i+".wav");
     }
     const bg = new PIXI.sound.Sound.from("assets/sounds/happy-ukulele.mp3");
+    bg.volume = 0.5;
     bg.play();
 
     //draw chocolate
@@ -171,8 +172,7 @@
                 continueBtn.on('click', gotoMenu);//TBC
                 //go back to menu
                 function gotoMenu() {
-                    //window.location.href="menu.html";
-                    window.location.href="Sadness.html";
+                    window.location.href="menu.html?a=2";
                 }
                 //draw restart button
                 let restart = new PIXI.Text("RESTART");

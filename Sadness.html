@@ -106,7 +106,6 @@
 
         //end function
         function end() {
-            bg.stop();
             clearInterval(dropping);
             //draw mask
             let mask = new PIXI.Graphics();
@@ -141,8 +140,7 @@
             continueBtn.on('click', gotoMenu);//TBC
             //go back to menu
             function gotoMenu() {
-                //window.location.href="menu.html";
-                window.location.href="Nervous.html";
+                window.location.href="menu.html?a=3";
             }
             //draw restart button
             let restart = new PIXI.Text("RESTART");
