@@ -33,34 +33,57 @@
     //set slice count to 0
     var count = 0;
 
-    
-
-    //draw start screen
-    //draw mask
-    let mask = new PIXI.Graphics();
-    mask.beginFill(0x000000, 0.8);
-    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-    mask.endFill();
-    mask.buttonMode = true;
-    mask.interactive = true;
-    mask.on("click", startShy);
-    app.stage.addChild(mask);
-
+    //draw start dialogue
     //draw message
+    let speaker = new PIXI.Text('Watson(me):');
+    speaker.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white"
+    }
+    speaker.position.set(app.renderer.view.width/10, app.renderer.view.height/4*3);
     let startText = new
-    PIXI.Text('It is the first week of college. \n\n\nYou have already misplaced your textbooks.\n\n\nBut you see someone running up in your way\n\n\n......');
+    PIXI.Text("Is this the classroom in my college?\n\nOh I really miss this... Wait, who are you?");
     startText.style = {
         fontFamily: "Arial",
-        fontSize: 35,
+        fontSize: 20,
         fill: "white",
         wordWrap: true,
         wordWrapWidth: app.renderer.view.width/10*9,
     }
-    startText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-    app.stage.addChild(startText);
+    startText.position.set(app.renderer.view.width/4, app.renderer.view.height/4*3);
+    let next = new PIXI.Graphics();
+    next.beginFill(0xffffff);
+    next.drawPolygon([
+        0, 0,             //First point
+        0, 40,              //Second point
+        30, 20                 //Third point
+    ]);
+    next.endFill();
+    next.x = app.renderer.view.width/7*6;
+    next.y = app.renderer.view.height/4*3;
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x6b432d, 0.2);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height/3);
+    mask.endFill();
+    mask.position.set(0, app.renderer.view.height/3*2);
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.text = startText;
+    mask.speaker = speaker;
+    mask.next = next;
+    mask.on("click", function(){
+        this.visibility = false;
+        this.text.visibility = false;
+        this.speaker.visibility = false;
+        this.next.visibility = false;
+        app.stage.removeChild(this, this.text, this.speaker, this.next);
+        start();
+    });
+    app.stage.addChild(mask, startText, speaker, next);
 
     //starts the level
-    function startShy() {
+    function start() {
         //clear stage
         for (var i = app.stage.children.length - 1; i >= 0; i--) {
             app.stage.removeChild(app.stage.children[i]);
@@ -101,8 +124,8 @@
                 if (candy.y<=0) candy.y = 0;
                 if (candy.y>=app.renderer.view.height) candy.y = app.renderer.view.height;
                 //counter++;
-                i *= 0.9;
-                j *= 0.9;
+                i *= 0.95;
+                j *= 0.95;
             }
 
             //circle clickable
@@ -150,11 +173,11 @@
                     window.location.href="menu.html?a=5";
                 }
                 //draw restart button
-                let restart = new PIXI.Text("RESTART");
+                let restart = new PIXI.Text("TRY AGAIN");
                 restart.style = {
                     fontFamily: "Arial",
                     fontSize: 30,
-                    fill: "gray",
+                    fill: "white",
                 }
                 restart.x = app.renderer.view.width/5*4;
                 restart.y = app.renderer.view.height/5*4;
