@@ -254,10 +254,12 @@
                                     brokenHeart4.y = app.renderer.view.height/3;
                                     app.stage.addChild(brokenHeart4);
                                     picture.on("click", function clickRespond(){
-                                        this.interactivity = false;
-                                        this.buttonMode = false;
-                                        this.firstClick = false;
-                                        end();
+                                        if (this.firstClick){
+                                            this.interactivity = false;
+                                            this.buttonMode = false;
+                                            this.firstClick = false;
+                                            end();
+                                        }
                                     });
                                 } else {
                                     brokenHeart4.visible = false;

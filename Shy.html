@@ -131,14 +131,17 @@
 
             //circle clickable
             candy.on("click", function(){
-                if (candy.firstClick) end();
+                if (candy.firstClick) {
+                    this.interactive = false;
+                    this.buttonMode = false;
+                    this.firstClick = false;
+                    end();
+                }
             })
 
             //when game ends
             function end() {
-                candy.interactive = false;
-                candy.buttonMode = false;
-                candy.firstClick = false;
+                candy.
                 //draw mask
                 let mask = new PIXI.Graphics();
                 mask.beginFill(0x000000, 0.8);
