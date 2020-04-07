@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Anger.html" afterPath="$PROJECT_DIR$/Anger.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Anticipation.html" afterPath="$PROJECT_DIR$/Anticipation.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -77,38 +78,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Anticipation.html">
+      <file leaf-file-name="Anger.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Anger.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="30" />
+            <state relative-caret-position="1573">
+              <caret line="559" column="17" lean-forward="false" selection-start-line="559" selection-start-column="17" selection-end-line="559" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Anger.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Anger.html">
+      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Anticipation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4212">
-              <caret line="540" column="37" lean-forward="true" selection-start-line="540" selection-start-column="37" selection-end-line="540" selection-end-column="37" />
-              <folding>
-                <marker date="1586217825019" expanded="false" signature="9510:12503" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="11918:12503" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="16570:20709" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="16572:20561" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="16828:20543" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="16846:16965" ph="//..." />
-                <marker date="1586217825019" expanded="true" signature="17484:17714" ph="{&quot;fontFamily&quot;: &quot;Arial&quot;...}" />
-                <marker date="1586217825019" expanded="true" signature="17824:18514" ph="//..." />
-                <marker date="1586217825019" expanded="true" signature="18659:18843" ph="[...]" />
-                <marker date="1586217825019" expanded="true" signature="19151:19190" ph="//..." />
-                <marker date="1586217825019" expanded="true" signature="19227:19304" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="19431:19559" ph="{&quot;fontFamily&quot;: &quot;Arial&quot;...}" />
-                <marker date="1586217825019" expanded="true" signature="19843:19901" ph="{...}" />
-                <marker date="1586217825019" expanded="true" signature="19918:20417" ph="//..." />
-                <marker date="1586217825019" expanded="true" signature="20567:20703" ph="{...}" />
-              </folding>
+            <state relative-caret-position="-180">
+              <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="83" selection-end-line="42" selection-end-column="83" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,13 +168,13 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/intro.html" />
         <option value="$PROJECT_DIR$/Surprise.html" />
-        <option value="$PROJECT_DIR$/Anger.html" />
         <option value="$PROJECT_DIR$/menu.html" />
         <option value="$PROJECT_DIR$/Joy.html" />
         <option value="$PROJECT_DIR$/Sadness.html" />
         <option value="$PROJECT_DIR$/Nervous.html" />
         <option value="$PROJECT_DIR$/Shy.html" />
         <option value="$PROJECT_DIR$/Anticipation.html" />
+        <option value="$PROJECT_DIR$/Anger.html" />
       </list>
     </option>
   </component>
@@ -270,26 +255,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Anticipation.html">
+  <component name="RunManager" selected="JavaScript Debug.Anger.html">
+    <configuration name="Anger.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Anger.html" />
     <configuration name="Anticipation.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Anticipation.html" />
-    <configuration name="Joy.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Joy.html" />
     <configuration name="Nervous.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Nervous.html" />
     <configuration name="Sadness.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Sadness.html" />
     <configuration name="Shy.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Shy.html" />
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Anger.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Anger.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
       </list>
     </recent_temporary>
   </component>
@@ -307,12 +292,12 @@
       <workItem from="1585604026503" duration="18827000" />
       <workItem from="1585780001471" duration="55177000" />
       <workItem from="1586133256385" duration="8303000" />
-      <workItem from="1586217136819" duration="5389000" />
+      <workItem from="1586217136819" duration="5857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89186000" />
+    <option name="totallyTimeSpent" value="89654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -544,30 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Anger.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4212">
-          <caret line="540" column="37" lean-forward="true" selection-start-line="540" selection-start-column="37" selection-end-line="540" selection-end-column="37" />
-          <folding>
-            <marker date="1586217825019" expanded="false" signature="9510:12503" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="11918:12503" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="16570:20709" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="16572:20561" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="16828:20543" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="16846:16965" ph="//..." />
-            <marker date="1586217825019" expanded="true" signature="17484:17714" ph="{&quot;fontFamily&quot;: &quot;Arial&quot;...}" />
-            <marker date="1586217825019" expanded="true" signature="17824:18514" ph="//..." />
-            <marker date="1586217825019" expanded="true" signature="18659:18843" ph="[...]" />
-            <marker date="1586217825019" expanded="true" signature="19151:19190" ph="//..." />
-            <marker date="1586217825019" expanded="true" signature="19227:19304" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="19431:19559" ph="{&quot;fontFamily&quot;: &quot;Arial&quot;...}" />
-            <marker date="1586217825019" expanded="true" signature="19843:19901" ph="{...}" />
-            <marker date="1586217825019" expanded="true" signature="19918:20417" ph="//..." />
-            <marker date="1586217825019" expanded="true" signature="20567:20703" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Surprise.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1623">
@@ -629,8 +590,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Anticipation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="30" />
+        <state relative-caret-position="-180">
+          <caret line="42" column="83" lean-forward="false" selection-start-line="42" selection-start-column="83" selection-end-line="42" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Anger.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1573">
+          <caret line="559" column="17" lean-forward="false" selection-start-line="559" selection-start-column="17" selection-end-line="559" selection-end-column="17" />
           <folding />
         </state>
       </provider>
