@@ -149,6 +149,7 @@
                         chocolate.scale.y = 1-13*0.05;
                         chocolate.interactive = true;
                         chocolate.buttonMode = true;
+                        chocolate.firstClick = true;
                         chocolate.on("click", function(){
                             succeed(this);
                         });
@@ -163,6 +164,7 @@
             function succeed(item) {
                 item.interactive = false;
                 item.buttonMode = false;
+                item.firstClick = false;
                 finish.play();
                 //draw mask
                 let mask = new PIXI.Graphics();
