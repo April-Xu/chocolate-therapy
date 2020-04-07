@@ -36,131 +36,176 @@
     const dripping = new PIXI.sound.Sound.from("assets/sounds/dripping.mp3");
     bg.play();
 
-    //draw chocolate
-    let chocolate = new PIXI.Graphics();
-    chocolate.beginFill(0x6b432d);
-    chocolate.drawCircle(0, 0, app.renderer.view.width/10*3);
-    chocolate.endFill();
-    chocolate.x = app.renderer.view.width/5*2+app.renderer.view.width/10;
-    chocolate.y = -app.renderer.view.height/10;
-    app.stage.addChild(chocolate);
-
-    //draw container
-    let container = new PIXI.Graphics();
-    container.lineStyle(4, 0xFFFFFF, 1);
-    container.drawRect(0, 0, xmax-xmin+200, 200);
-    container.endFill();
-    container.x = xmin-100;
-    container.y = app.renderer.view.height-100;
-    app.stage.addChild(container);
-
-    //set slices range
-    var xmin = app.renderer.view.width/5*2+app.renderer.view.width/10-app.renderer.view.width/20*3;
-    var xmax = app.renderer.view.width/5*2+app.renderer.view.width/10+app.renderer.view.width/20*3;
-    //set slice count to 0
-    var count = 0;
-
-    PIXI.loader.add("assets/images/drop.png").load(setup);
-    function setup(){
-        //sclices dropping
-        var dropping = setInterval(function(){
-            var slices = [];
-            var amount = Math.floor(Math.random() * 2) + 2;
-            for (var i=0; i<amount+1; i++) {
-                //init slices
-                let slice = new
-                PIXI.Sprite(PIXI.loader.resources["assets/images/drop.png"].texture);
-                slice.position.set(Math.floor(Math.random() * (xmax - xmin) ) + xmin, 100);
-                var size = Math.random()*(0.1)+0.05;
-                slice.scale.set(size, size);
-                slice.interactive = true;
-                slice.buttonMode = true;
-                slice.on("click", function(){
-                    count ++;
-                    dripping.play();
-                    let sliceClone = new PIXI.Sprite(PIXI.loader.resources["assets/images/drop.png"].texture);
-                    sliceClone.x = Math.floor(Math.random() * (xmax-xmin+200) ) + xmin - 100;
-                    sliceClone.y = app.renderer.view.height-100;
-                    sliceClone.scale.set(this.scale.x, this.scale.y);
-                    app.stage.addChild(sliceClone);
-                    this.visible = false;
-                    app.stage.removeChild(this);
-                    if (count == 20) {
-                        end();
-                    }
-                })
-                slices.push(slice);
-                app.stage.addChild(slice);
-            }
-            //slices dropping
-            var timer = setInterval(function(){
-                for (i=0; i<slices.length; i++) {
-                    slices[i].y+=20;
-                    if (slices[i].y>=app.renderer.view.height) {
-                        clearInterval(timer);
-                        slices[i].destroy();
-                    }
-                }
-            },100);
-        }, 1000);
-
-        //end function
-        function end() {
-            clearInterval(dropping);
-            //draw mask
-            let mask = new PIXI.Graphics();
-            mask.beginFill(0x000000, 0.8);
-            mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-            mask.endFill();
-            app.stage.addChild(mask);
-            //draw message
-            let endText = new
-            PIXI.Text('"You are crying like my heart is breaking. \n\n\nWe can overcome anything as long as we are together."');
-            endText.style = {
-                fontFamily: "Arial",
-                fontSize: 40,
-                fill: "white",
-                wordWrap: true,
-                wordWrapWidth: app.renderer.view.width/10*9,
-            }
-            endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-            //draw continue button
-            let continueBtn = new PIXI.Graphics();
-            continueBtn.beginFill(0x6b432d);
-            continueBtn.drawPolygon([
-                0, 0,             //First point
-                0, 100,              //Second point
-                80, 50                 //Third point
-            ]);
-            continueBtn.endFill();
-            continueBtn.x = app.renderer.view.width/2;
-            continueBtn.y = app.renderer.view.height/4*3;
-            continueBtn.buttonMode = true;
-            continueBtn.interactive = true;
-            continueBtn.on('click', gotoMenu);//TBC
-            //go back to menu
-            function gotoMenu() {
-                window.location.href="menu.html?a=3";
-            }
-            //draw restart button
-            let restart = new PIXI.Text("RESTART");
-            restart.style = {
-                fontFamily: "Arial",
-                fontSize: 30,
-                fill: "gray",
-            }
-            restart.x = app.renderer.view.width/5*4;
-            restart.y = app.renderer.view.height/5*4;
-            restart.buttonMode = true;
-            restart.interactive = true;
-            restart.on('click', refresh);
-            function refresh() {
-                location.reload();
-            }
-            app.stage.addChild(mask, endText, continueBtn, restart);
-        }
+    //draw start dialogue
+    //draw message
+    let speaker = new PIXI.Text('Watson(me):');
+    speaker.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white"
     }
+    speaker.position.set(app.renderer.view.width/10, app.renderer.view.height/4*3);
+    let startText = new
+    PIXI.Text("I remember playing with that little child. I must love her so much. Is her my daughter?\n...Oh this chocolate doesn't sound good. \nI would even want to collect my wife's tear if she sounds like this.\n");
+    startText.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    }
+    startText.position.set(app.renderer.view.width/4, app.renderer.view.height/4*3);
+    let next = new PIXI.Graphics();
+    next.beginFill(0xffffff);
+    next.drawPolygon([
+        0, 0,             //First point
+        0, 40,              //Second point
+        30, 20                 //Third point
+    ]);
+    next.endFill();
+    next.x = app.renderer.view.width/7*6;
+    next.y = app.renderer.view.height/4*3;
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x6b432d, 0.2);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height/3);
+    mask.endFill();
+    mask.position.set(0, app.renderer.view.height/3*2);
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.text = startText;
+    mask.speaker = speaker;
+    mask.next = next;
+    mask.on("click", function(){
+        this.visibility = false;
+        this.text.visibility = false;
+        this.speaker.visibility = false;
+        this.next.visibility = false;
+        app.stage.removeChild(this, this.text, this.speaker, this.next);
+        start();
+    });
+    app.stage.addChild(mask, startText, speaker, next);
 
+    function start(){
+        //draw chocolate
+        let chocolate = new PIXI.Graphics();
+        chocolate.beginFill(0x6b432d);
+        chocolate.drawCircle(0, 0, app.renderer.view.width/10*3);
+        chocolate.endFill();
+        chocolate.x = app.renderer.view.width/5*2+app.renderer.view.width/10;
+        chocolate.y = -app.renderer.view.height/10;
+        app.stage.addChild(chocolate);
+
+        //draw container
+        let container = new PIXI.Graphics();
+        container.lineStyle(4, 0xFFFFFF, 1);
+        container.drawRect(0, 0, xmax-xmin+200, 200);
+        container.endFill();
+        container.x = xmin-100;
+        container.y = app.renderer.view.height-100;
+        app.stage.addChild(container);
+
+        PIXI.loader.add("assets/images/drop.png").load(setup);
+        function setup(){
+            //sclices dropping
+            var dropping = setInterval(function(){
+                var slices = [];
+                var amount = Math.floor(Math.random() * 2) + 2;
+                for (var i=0; i<amount+1; i++) {
+                    //init slices
+                    let slice = new
+                    PIXI.Sprite(PIXI.loader.resources["assets/images/drop.png"].texture);
+                    slice.position.set(Math.floor(Math.random() * (xmax - xmin) ) + xmin, 100);
+                    var size = Math.random()*(0.1)+0.05;
+                    slice.scale.set(size, size);
+                    slice.interactive = true;
+                    slice.buttonMode = true;
+                    slice.on("click", function(){
+                        count ++;
+                        dripping.play();
+                        let sliceClone = new PIXI.Sprite(PIXI.loader.resources["assets/images/drop.png"].texture);
+                        sliceClone.x = Math.floor(Math.random() * (xmax-xmin+200) ) + xmin - 100;
+                        sliceClone.y = app.renderer.view.height-100;
+                        sliceClone.scale.set(this.scale.x, this.scale.y);
+                        app.stage.addChild(sliceClone);
+                        this.visible = false;
+                        app.stage.removeChild(this);
+                        if (count == 20) {
+                            end();
+                        }
+                    })
+                    slices.push(slice);
+                    app.stage.addChild(slice);
+                }
+                //slices dropping
+                var timer = setInterval(function(){
+                    for (i=0; i<slices.length; i++) {
+                        slices[i].y+=20;
+                        if (slices[i].y>=app.renderer.view.height) {
+                            clearInterval(timer);
+                            slices[i].destroy();
+                        }
+                    }
+                },100);
+            }, 1000);
+
+            //end function
+            function end() {
+                clearInterval(dropping);
+                //draw mask
+                let mask = new PIXI.Graphics();
+                mask.beginFill(0x000000, 0.8);
+                mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
+                mask.endFill();
+                app.stage.addChild(mask);
+                //draw message
+                let endText = new
+                PIXI.Text('"You are crying like my heart is breaking. \n\n\nWe can overcome anything as long as we are together."');
+                endText.style = {
+                    fontFamily: "Arial",
+                    fontSize: 40,
+                    fill: "white",
+                    wordWrap: true,
+                    wordWrapWidth: app.renderer.view.width/10*9,
+                }
+                endText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
+                //draw continue button
+                let continueBtn = new PIXI.Graphics();
+                continueBtn.beginFill(0x6b432d);
+                continueBtn.drawPolygon([
+                    0, 0,             //First point
+                    0, 100,              //Second point
+                    80, 50                 //Third point
+                ]);
+                continueBtn.endFill();
+                continueBtn.x = app.renderer.view.width/2;
+                continueBtn.y = app.renderer.view.height/4*3;
+                continueBtn.buttonMode = true;
+                continueBtn.interactive = true;
+                continueBtn.on('click', gotoMenu);//TBC
+                //go back to menu
+                function gotoMenu() {
+                    window.location.href="menu.html?a=3";
+                }
+                //draw restart button
+                let restart = new PIXI.Text("RESTART");
+                restart.style = {
+                    fontFamily: "Arial",
+                    fontSize: 30,
+                    fill: "white",
+                }
+                restart.x = app.renderer.view.width/5*4;
+                restart.y = app.renderer.view.height/5*4;
+                restart.buttonMode = true;
+                restart.interactive = true;
+                restart.on('click', refresh);
+                function refresh() {
+                    location.reload();
+                }
+                app.stage.addChild(mask, endText, continueBtn, restart);
+            }
+        }
+
+    }
 </script>
 </body>
 </html>
