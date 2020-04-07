@@ -35,17 +35,42 @@
     const crack = new PIXI.sound.Sound.from("assets/sounds/crack.mp3");
     const goodbye = new PIXI.sound.Sound.from("assets/sounds/goodbye.mp3");
 
-    //add instruction 1
-    var instruction = new
-    PIXI.Text("This is the last chocolate my wife gave me.\nI can't believe I lose all of the memory with her. Thank god she made me these chocolates.\n" +
-        "You know what? I should definitely make her a chocolate for SURPRISE!");
-    instruction.style = {
+    //draw start dialogue
+    //draw message
+    let speaker = new PIXI.Text('Waston(me):');
+    speaker.style = {
         fontFamily: "Arial",
         fontSize: 20,
-        fill: "#6b432d",
+        fill: "white"
     }
-    instruction.position.set(app.renderer.view.width/8, app.renderer.view.height/20);
-    app.stage.addChild(instruction);
+    speaker.position.set(app.renderer.view.width/10, app.renderer.view.height/4*3);
+    let startText = new
+    PIXI.Text("This is the last chocolate Anna gave me. I can't believe I lost all of the memory with her.\nThank god she made me these chocolates.\n" +
+        "I should definitely make her a chocolate to surprise her. Let's start!");
+    startText.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white",
+        wordWrap: true,
+        wordWrapWidth: app.renderer.view.width/10*9,
+    }
+    startText.position.set(app.renderer.view.width/4, app.renderer.view.height/4*3);
+//    let next = new PIXI.Graphics();
+//    next.beginFill(0xffffff);
+//    next.drawPolygon([
+//        0, 0,             //First point
+//        0, 40,              //Second point
+//        30, 20                 //Third point
+//    ]);
+//    next.endFill();
+//    next.x = app.renderer.view.width/7*6;
+//    next.y = app.renderer.view.height/4*3;
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x6b432d, 0.2);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height/3);
+    mask.endFill();
+    mask.position.set(0, app.renderer.view.height/3*2);
+    app.stage.addChild(mask, startText, speaker);
 
     //load chocolate images
     PIXI.loader.add([
@@ -73,8 +98,10 @@
         chocolateSprites = [];
         for (var i=1; i<11; i++) {
             let chocolate = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate"+i+".png"].texture);
-            chocolate.x = app.renderer.view.width/3;
-            chocolate.y = app.renderer.view.height/5;
+            chocolate.anchor.set(0.5, 0.5);
+            chocolate.scale.set(0.8, 0.8);
+            chocolate.x = app.renderer.view.width/2;
+            chocolate.y = app.renderer.view.height/3;
             chocolate.interactive = true;
             chocolate.buttonMode = true;
             chocolate.label = i;
@@ -103,116 +130,134 @@
             completeHeart.visible = false;
             app.stage.removeChild(completeHeart);
             let fakeHeart = new PIXI.Sprite(PIXI.loader.resources["assets/images/chocolate10.png"].texture);
-            fakeHeart.x = app.renderer.view.width/3;
-            fakeHeart.y = app.renderer.view.height/5;
+            fakeHeart.anchor.set(0.5, 0.5);
+            fakeHeart.scale.set(0.8, 0.8);
+            fakeHeart.x = app.renderer.view.width/2;
+            fakeHeart.y = app.renderer.view.height/3;
             app.stage.addChild(fakeHeart);
-            instruction.text =
-                "Hey this is a perfect heart. \n\nLast step: pick it up and give it a lovely wrapping!";
-            instruction.style.fontSize = 30;
+            startText.text =
+                "Hey this is a perfect heart. \nLast step: pick it up and give it a lovely wrapping!";
+            startText.style.fontSize = 30;
             setTimeout(function() {
                 fakeHeart.visible = false;
                 //crack once
                 crack.play();
                 switch(count) {
                     case 0:
-                        instruction.text = "Wait..am I hearing something?";
+                        startText.text = "Wait..am I hearing something?";
                         break;
                     case 1:
-                        instruction.text = "No.. not again.";
+                        startText.text = "No.. not again.";
                         break;
                     case 2:
-                        instruction.text = "WTF? What's happening here?";
+                        startText.text = "WTF? What's happening here?";
                         break;
                 }
                 this.visible = false;
                 let brokenHeart1 = new
                 PIXI.Sprite(PIXI.loader.resources["assets/images/heart1.png"].texture);
-                brokenHeart1.x = app.renderer.view.width / 3;
-                brokenHeart1.y = app.renderer.view.height / 5;
+                brokenHeart1.anchor.set(0.5, 0.5);
+                brokenHeart1.scale.set(0.8, 0.8);
+                brokenHeart1.x = app.renderer.view.width/2;
+                brokenHeart1.y = app.renderer.view.height/3;
                 app.stage.addChild(brokenHeart1);
                 //crack 2nd time
                 setTimeout(function(){
                     crack.play();
                     switch(count) {
                         case 0:
-                            instruction.text = "What's going on?";
+                            startText.text = "What's going on?";
                             break;
                         case 1:
-                            instruction.text = "Is it something wrong with my material?";
+                            startText.text = "Is it something wrong with my material?";
                             break;
                         case 2:
-                            instruction.text = "Okay. Something should be wrong.";
+                            startText.text = "Okay. Something should be wrong.";
                             break;
                     }
                     brokenHeart1.visible = false;
                     let brokenHeart2 = new
                     PIXI.Sprite(PIXI.loader.resources["assets/images/heart2.png"].texture);
-                    brokenHeart2.x = app.renderer.view.width / 3;
-                    brokenHeart2.y = app.renderer.view.height / 5;
+                    brokenHeart2.anchor.set(0.5, 0.5);
+                    brokenHeart2.scale.set(0.8, 0.8);
+                    brokenHeart2.x = app.renderer.view.width/2;
+                    brokenHeart2.y = app.renderer.view.height/3;
                     app.stage.addChild(brokenHeart2);
                     //crack 3rd time
                     setTimeout(function(){
                         crack.play();
                         switch(count) {
                             case 0:
-                                instruction.text = "Is it cracking?!";
+                                startText.text = "Is it cracking?!";
                                 break;
                             case 1:
-                                instruction.text = "Oh my god. I'm gonna find another recipe.";
+                                startText.text = "Oh my god. I'm gonna find another recipe.";
                                 break;
                             case 2:
-                                instruction.text = "Where are the guys that gave me this?";
+                                startText.text = "Where are the guys that gave me this?";
                                 break;
                         }
                         brokenHeart2.visible = false;
                         let brokenHeart3 = new
                         PIXI.Sprite(PIXI.loader.resources["assets/images/heart3.png"].texture);
-                        brokenHeart3.x = app.renderer.view.width / 3;
-                        brokenHeart3.y = app.renderer.view.height / 5;
+                        brokenHeart3.anchor.set(0.5, 0.5);
+                        brokenHeart3.scale.set(0.8, 0.8);
+                        brokenHeart3.x = app.renderer.view.width/2;
+                        brokenHeart3.y = app.renderer.view.height/3;
                         app.stage.addChild(brokenHeart3);
                         //crack 4th time
                         setTimeout(function(){
                             crack.play();
                             switch(count) {
                                 case 0:
-                                    instruction.text = "No way..it's broken! I need to start again!";
+                                    startText.text = "No way..it's broken! I need to start again!";
                                     break;
                                 case 1:
-                                    instruction.text =
+                                    startText.text =
                                         "It should work this time. The recipe is from Peter Grewlings.\n\nHe's your favourite chef.";
                                     break;
                                 case 2:
-                                    instruction.text = "There's some bug going on. I'm getting scared.";
+                                    startText.text =
+                                        "There's some bug going on. I'm getting scared.";
                                     break;
                             }
                             brokenHeart3.visible = false;
                             var brokenHeart4 = new
                             PIXI.Sprite(PIXI.loader.resources["assets/images/heart4.png"].texture);
-                            brokenHeart4.x = app.renderer.view.width / 3;
-                            brokenHeart4.y = app.renderer.view.height / 5;
+                            brokenHeart4.anchor.set(0.5, 0.5);
+                            brokenHeart4.scale.set(0.8, 0.8);
+                            brokenHeart4.x = app.renderer.view.width/2;
+                            brokenHeart4.y = app.renderer.view.height/3;
                             app.stage.addChild(brokenHeart4);
                             setTimeout(function(){
                                 //check if the iteration works several times
                                 count++;
                                 if (count == 3) {
-                                    instruction.text =
+                                    startText.text =
                                         "I'm going to find the...\n\n" +
                                         "Wait...What's this?";
                                     app.stage.removeChild(brokenHeart4);
                                     let picture = new
                                     PIXI.Sprite(PIXI.loader.resources["assets/images/picture.png"].texture);
-                                    picture.x = app.renderer.view.width / 3 + 50;
-                                    picture.y = app.renderer.view.height / 5 - 30;
+                                    picture.anchor.set(0.5, 0.5);
+                                    picture.scale.set(0.8, 0.8);
+                                    picture.x = app.renderer.view.width/2+50;
+                                    picture.y = app.renderer.view.height/3-50;
                                     app.stage.addChild(picture);
                                     picture.interactive = true;
                                     picture.buttonMode = true;
                                     app.stage.addChild(picture);
-                                    brokenHeart4.x = app.renderer.view.width / 3;
-                                    brokenHeart4.y = app.renderer.view.height / 5;
+                                    brokenHeart4.anchor.set(0.5, 0.5);
+                                    brokenHeart4.scale.set(0.8, 0.8);
+                                    brokenHeart4.x = app.renderer.view.width/2;
+                                    brokenHeart4.y = app.renderer.view.height/3;
                                     app.stage.addChild(brokenHeart4);
-                                    picture.on("click", end);
+                                    picture.on("click", function(){
+                                        this.interactivity = false;
+                                        this.buttonMode = false;
+                                        end();
+                                    });
                                 } else {
-                                    console.log(count, "this is where sprite 0 comes")
                                     brokenHeart4.visible = false;
                                     app.stage.removeChild(brokenHeart4);
                                     //add 1st chocolate again
@@ -275,18 +320,20 @@
                         break;
                     case 4:
                         endText.text =
-                            "It's your tombstone. \n\nI took the picture right after I visited you.";
+                            "Anna my girl, this is your tombstone. \n\nI took the picture right after I visited you.";
                         break;
                     case 5:
                         endText.text =
-                            "Hah.. \n\nCan you see the tree around you? \n\nIt's growing well.";
+                            "Do you know?\nAs the sun shines down,\nAnd the trees around you grow,\nWith birds fluttering about the branches,\nAnd the sweet smell of cherry blossoms,";
+                        endText.fontsize = "50";
                         break;
                     case 6:
+                        endText.fontsize = "60";
                         endText.text = "... ...";
                         break;
                     case 7:
                         endText.text =
-                            "Yes, I understand.\n\nI can finally live without you and with you.\n\nGoodbye, my love.";
+                            "Yes, I understand.\n\nI will live without you and with you.\n\nFarewell, my love.";
                         break;
                     case 8:
                         btn.visible = false;
