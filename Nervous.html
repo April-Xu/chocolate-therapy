@@ -42,29 +42,69 @@
     const explosion = new PIXI.sound.Sound.from("assets/sounds/explosion.mp3");
     ticking.volume = 2;
 
-    //draw start screen
-    //draw mask
-    let mask = new PIXI.Graphics();
-    mask.beginFill(0x000000, 0.8);
-    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-    mask.endFill();
-    mask.buttonMode = true;
-    mask.interactive = true;
-    mask.on("click", startNervous);
-    app.stage.addChild(mask);
-
+    //draw start dialogue
     //draw message
+    let speaker = new PIXI.Text('Anonymous sound:');
+    speaker.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white"
+    }
+    speaker.position.set(app.renderer.view.width/10, app.renderer.view.height/4*3);
     let startText = new
-    PIXI.Text('" Hey. Take a deep breath."\n\n\n"..."\n\n\n"Yes, she is going to be fine. Just wait here calmly.\n\n\nThe baby is about to come. Are you ready?"');
+    PIXI.Text("Hey. Take a deep breath. The baby is about to come.\n\nShe is going to be fine. Just wait here calmly. Are you ready?");
     startText.style = {
         fontFamily: "Arial",
-        fontSize: 35,
+        fontSize: 20,
         fill: "white",
         wordWrap: true,
         wordWrapWidth: app.renderer.view.width/10*9,
     }
-    startText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-    app.stage.addChild(startText);
+    startText.position.set(app.renderer.view.width/4, app.renderer.view.height/4*3);
+    let next = new PIXI.Graphics();
+    next.beginFill(0xffffff);
+    next.drawPolygon([
+        0, 0,             //First point
+        0, 40,              //Second point
+        30, 20                 //Third point
+    ]);
+    next.endFill();
+    next.x = app.renderer.view.width/7*6;
+    next.y = app.renderer.view.height/4*3;
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x6b432d, 0.2);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height/3);
+    mask.endFill();
+    mask.position.set(0, app.renderer.view.height/3*2);
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.text = startText;
+    mask.speaker = speaker;
+    mask.next = next;
+    mask.on("click", function(){
+        this.visibility = false;
+        this.text.visibility = false;
+        this.speaker.visibility = false;
+        this.next.visibility = false;
+        app.stage.removeChild(this, this.text, this.speaker, this.next);
+        start();
+    });
+    app.stage.addChild(mask, startText, speaker, next);
+
+    function start(){
+        speaker.text = "Watson(me):";
+        startText.text =
+            "Wait. What? Is that a doctor? Okay I'm starting to get wet.\n\nPlease let me hear about the baby and my wife before I pass out.";
+        mask.on("click", function(){
+            this.visibility = false;
+            this.text.visibility = false;
+            this.speaker.visibility = false;
+            this.next.visibility = false;
+            app.stage.removeChild(this, this.text, this.speaker, this.next);
+            startNervous();
+        });
+        app.stage.addChild(mask, startText, speaker, next);
+    }
 
     //starts the level
     function startNervous(){
@@ -81,7 +121,8 @@
         chocolate.y = app.renderer.view.height/10;
         app.stage.addChild(chocolate);
         //draw instruction
-        let instruction = new PIXI.Text("Cut the wires in this order to clear the chocolate bomb:");
+        let instruction = new
+        PIXI.Text("Cut the wires with the correct color order stated below to clear the chocolate bomb:");
         instruction.style = {
             fontFamily: "Arial",
             fontSize: 20,
@@ -257,11 +298,11 @@
             window.location.href="menu.html?a=4";
         }
         //draw restart button
-        let restart = new PIXI.Text("RESTART");
+        let restart = new PIXI.Text("TRY AGAIN");
         restart.style = {
             fontFamily: "Arial",
             fontSize: 30,
-            fill: "gray",
+            fill: "white",
         }
         restart.x = app.renderer.view.width/5*4;
         restart.y = app.renderer.view.height/5*4;
