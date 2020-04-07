@@ -327,9 +327,11 @@
                 setup.timeStamp = duration;
                 setup.timeStep < 500 ? setup.timeStep = 500: setup.timeStep -= 100;
             }
-
-
-        }if(sliceCount == 10){initEnd = true}
+            if(sliceCount == 10){initEnd = true}
+        } else if(endPhase) {
+            fires[7].visible = false;
+            burnSound.stop();
+        }
         // console.log(delta);
         // console.log(Math.floor(delta * 10 * app.ticker.deltaTime  % 32 ));
         fires.forEach(f => {
@@ -379,6 +381,7 @@
         function startEnd(setup){
             burnSound.stop();
             fires[7].visible = false;
+            return setup;
         }
     }
 
@@ -451,7 +454,7 @@
     }
 
     update = setInterval(function(){
-        if (sliceCount==7) {
+        if (sliceCount==10) {
             clearInterval(update);
             // pause interaction
             chocolate.buttonMode = false;
