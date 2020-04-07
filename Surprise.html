@@ -246,15 +246,17 @@
                                     app.stage.addChild(picture);
                                     picture.interactive = true;
                                     picture.buttonMode = true;
+                                    picture.firstClick = true;
                                     app.stage.addChild(picture);
                                     brokenHeart4.anchor.set(0.5, 0.5);
                                     brokenHeart4.scale.set(0.8, 0.8);
                                     brokenHeart4.x = app.renderer.view.width/2;
                                     brokenHeart4.y = app.renderer.view.height/3;
                                     app.stage.addChild(brokenHeart4);
-                                    picture.on("click", function(){
+                                    picture.on("click", function clickRespond(){
                                         this.interactivity = false;
                                         this.buttonMode = false;
+                                        this.firstClick = false;
                                         end();
                                     });
                                 } else {

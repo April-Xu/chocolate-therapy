@@ -100,6 +100,7 @@
         chocolate.on('click', tremble);
         chocolate.buttonMode = true;
         chocolate.interactive = true;
+        chocolate.firstClick = true;
         app.stage.addChild(chocolate);
         //draw container
         let container = new PIXI.Graphics();
@@ -112,6 +113,8 @@
 
         //tremble effect
         function tremble() {
+            chocolate.interactive = false;
+            chocolate.buttonMode = false;
             count++;
             //prevent player from clicking on the chocolate
             chocolate.buttonMode = false;
@@ -158,17 +161,20 @@
                 if(slices[0].y>=container.y){
                     clearInterval(timer);
                     chocolate.x = app.renderer.view.width/5*2+app.renderer.view.width/10;
+                    chocolate.interactive = true;
+                    chocolate.buttonMode = true;
                 }
             },100);
         }
 
         //detect end
         update = setInterval(function(){
-            if (count==5) {
+            if (count==6 && chocolate.firstClick) {
                 clearInterval(update);
                 // pause interaction
                 chocolate.buttonMode = false;
                 chocolate.interactive = false;
+                chocolate.firstClick = false;
                 //draw end screen
                 setTimeout(function(){
                     //get image

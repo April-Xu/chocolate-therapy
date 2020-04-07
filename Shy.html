@@ -108,6 +108,7 @@
             // designate candy as being interactive so it handles events
             candy.buttonMode = true;
             candy.interactive = true;
+            candy.firstClick = true;
 
             //let counter = 0;
             var i = 800;
@@ -130,13 +131,14 @@
 
             //circle clickable
             candy.on("click", function(){
-                end();
+                if (candy.firstClick) end();
             })
 
             //when game ends
             function end() {
                 candy.interactive = false;
                 candy.buttonMode = false;
+                candy.firstClick = false;
                 //draw mask
                 let mask = new PIXI.Graphics();
                 mask.beginFill(0x000000, 0.8);
