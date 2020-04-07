@@ -30,32 +30,57 @@
     const success = new PIXI.sound.Sound.from("assets/sounds/success.wav");
     const finish = new PIXI.sound.Sound.from("assets/sounds/finishChocolate.wav");
 
-    //draw start screen
-    //draw mask
-    let mask = new PIXI.Graphics();
-    mask.beginFill(0x000000, 0.8);
-    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height);
-    mask.endFill();
-    mask.buttonMode = true;
-    mask.interactive = true;
-    mask.on("click", startAnticipated);
-    app.stage.addChild(mask);
-
+    //draw start dialogue
     //draw message
+    let speaker = new PIXI.Text('Waston(me):');
+    speaker.style = {
+        fontFamily: "Arial",
+        fontSize: 20,
+        fill: "white"
+    }
+    speaker.position.set(app.renderer.view.width/10, app.renderer.view.height/4*3);
     let startText = new
-    PIXI.Text('Its been a while since you started dating.\n\n\nBut suddenly she calls you up sounding urgent.\n\n\nWhat could it be?\n\n\n');
+    PIXI.Text("Anna..Anna! That's my wife! How can I even forget her!\n\nI remember when we started dating for while, she called me up sounding urgent...What's that?");
     startText.style = {
         fontFamily: "Arial",
-        fontSize: 35,
+        fontSize: 20,
         fill: "white",
         wordWrap: true,
         wordWrapWidth: app.renderer.view.width/10*9,
     }
-    startText.position.set(app.renderer.view.width/5, app.renderer.view.height/5);
-    app.stage.addChild(startText);
+    startText.position.set(app.renderer.view.width/4, app.renderer.view.height/4*3);
+    let next = new PIXI.Graphics();
+    next.beginFill(0xffffff);
+    next.drawPolygon([
+        0, 0,             //First point
+        0, 40,              //Second point
+        30, 20                 //Third point
+    ]);
+    next.endFill();
+    next.x = app.renderer.view.width/7*6;
+    next.y = app.renderer.view.height/4*3;
+    let mask = new PIXI.Graphics();
+    mask.beginFill(0x6b432d, 0.2);
+    mask.drawRect(0, 0, app.renderer.view.width, app.renderer.view.height/3);
+    mask.endFill();
+    mask.position.set(0, app.renderer.view.height/3*2);
+    mask.buttonMode = true;
+    mask.interactive = true;
+    mask.text = startText;
+    mask.speaker = speaker;
+    mask.next = next;
+    mask.on("click", function(){
+        this.visibility = false;
+        this.text.visibility = false;
+        this.speaker.visibility = false;
+        this.next.visibility = false;
+        app.stage.removeChild(this, this.text, this.speaker, this.next);
+        start();
+    });
+    app.stage.addChild(mask, startText, speaker, next);
 
     //starts the level
-    function startAnticipated(){
+    function start(){
         //clear stage
         for (var i = app.stage.children.length - 1; i >= 0; i--) {
             app.stage.removeChild(app.stage.children[i]);
@@ -176,11 +201,11 @@
                     window.location.href="menu.html?a=7";
                 }
                 //draw restart button
-                let restart = new PIXI.Text("RESTART");
+                let restart = new PIXI.Text("TRY AGAIN");
                 restart.style = {
                     fontFamily: "Arial",
                     fontSize: 30,
-                    fill: "gray",
+                    fill: "white",
                 }
                 restart.x = app.renderer.view.width/5*4;
                 restart.y = app.renderer.view.height/5*4;

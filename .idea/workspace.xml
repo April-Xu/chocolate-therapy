@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a75ea979-51b2-4f7d-8d13-61674fc1b15f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Shy.html" afterPath="$PROJECT_DIR$/Shy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Anticipation.html" afterPath="$PROJECT_DIR$/Anticipation.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shy.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Shy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Shy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+            <state relative-caret-position="249">
+              <caret line="174" column="30" lean-forward="false" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Anticipation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Anticipation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+            <state relative-caret-position="249">
+              <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -164,8 +164,8 @@
       <find>grew</find>
       <find>in a</find>
       <find>6b432d</find>
-      <find>restart</find>
       <find>startText</find>
+      <find>restart</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,11 +185,11 @@
         <option value="$PROJECT_DIR$/Surprise.html" />
         <option value="$PROJECT_DIR$/Anger.html" />
         <option value="$PROJECT_DIR$/menu.html" />
-        <option value="$PROJECT_DIR$/Anticipation.html" />
         <option value="$PROJECT_DIR$/Joy.html" />
         <option value="$PROJECT_DIR$/Sadness.html" />
         <option value="$PROJECT_DIR$/Nervous.html" />
         <option value="$PROJECT_DIR$/Shy.html" />
+        <option value="$PROJECT_DIR$/Anticipation.html" />
       </list>
     </option>
   </component>
@@ -270,26 +270,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Shy.html">
-    <configuration name="Anger.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Anger.html" />
+  <component name="RunManager" selected="JavaScript Debug.Anticipation.html">
+    <configuration name="Anticipation.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Anticipation.html" />
     <configuration name="Joy.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Joy.html" />
     <configuration name="Nervous.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Nervous.html" />
     <configuration name="Sadness.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Sadness.html" />
     <configuration name="Shy.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/chocolate-therapy/Shy.html" />
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Anger.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Anger.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Anticipation.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Shy.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Nervous.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Sadness.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Joy.html" />
       </list>
     </recent_temporary>
   </component>
@@ -307,12 +307,12 @@
       <workItem from="1585604026503" duration="18827000" />
       <workItem from="1585780001471" duration="55177000" />
       <workItem from="1586133256385" duration="8303000" />
-      <workItem from="1586217136819" duration="5075000" />
+      <workItem from="1586217136819" duration="5389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88872000" />
+    <option name="totallyTimeSpent" value="89186000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -594,14 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Anticipation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sadness.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -629,8 +621,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Shy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+        <state relative-caret-position="249">
+          <caret line="174" column="30" lean-forward="false" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Anticipation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="30" />
           <folding />
         </state>
       </provider>
