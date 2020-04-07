@@ -151,7 +151,12 @@
                         chocolate.buttonMode = true;
                         chocolate.firstClick = true;
                         chocolate.on("click", function(){
-                            succeed(this);
+                            if (this.firstClick) {
+                                this.interactive = false;
+                                this.buttonMode = false;
+                                this.firstClick =false;
+                                succeed();
+                            }
                         });
                         app.stage.addChild(chocolate);
                     };
@@ -161,10 +166,7 @@
             app.stage.addChild(boxSprites[0]);
 
             //the game ends
-            function succeed(item) {
-                item.interactive = false;
-                item.buttonMode = false;
-                item.firstClick = false;
+            function succeed() {
                 finish.play();
                 //draw mask
                 let mask = new PIXI.Graphics();

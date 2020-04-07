@@ -102,6 +102,7 @@
         chocolate.y = app.renderer.view.height / 10;
         chocolate.buttonMode = true;
         chocolate.interactive = true;
+        chocolate.firstClick = true;
         chocolate.on('click', slice);
         app.stage.addChild(chocolate);
 
@@ -367,11 +368,12 @@
         }
 
         update = setInterval(function(){
-            if (sliceCount==10) {
+            if (sliceCount==10 && firstClick) {
                 clearInterval(update);
                 // pause interaction
                 chocolate.buttonMode = false;
                 chocolate.interactive = false;
+                chocolate.firstClick = false;
                 fires[7].visible = false;
                 //draw end screen
                 setTimeout(function(){
