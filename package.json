@@ -19,7 +19,7 @@
   "homepage": "https://github.com/April-Xu/chocolate-therapy#readme",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "pixi-sound": "^3.0.4",
     "pixi.js": "^5.2.1",
     "popper.js": "^1.16.1"
