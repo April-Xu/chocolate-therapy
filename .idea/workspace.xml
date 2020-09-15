@@ -27,8 +27,8 @@
       <file leaf-file-name="Joy.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="156" column="46" lean-forward="true" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+            <state relative-caret-position="152">
+              <caret line="226" column="50" lean-forward="true" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -37,8 +37,8 @@
       <file leaf-file-name="Sadness.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sadness.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="71" column="19" lean-forward="false" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+            <state relative-caret-position="-433">
+              <caret line="106" column="60" lean-forward="false" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -107,7 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cat</find>
       <find>contain</find>
       <find>rect</find>
       <find>0.5</find>
@@ -137,6 +136,7 @@
       <find>restart</find>
       <find>firstclick</find>
       <find>slice</find>
+      <find>on('c</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -281,12 +281,12 @@
       <workItem from="1586217136819" duration="11345000" />
       <workItem from="1587177418686" duration="73000" />
       <workItem from="1588180089815" duration="25000" />
-      <workItem from="1600144656354" duration="161000" />
+      <workItem from="1600144656354" duration="903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95401000" />
+    <option name="totallyTimeSpent" value="96143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -629,22 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sadness.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="19" lean-forward="false" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Anticipation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2340">
@@ -685,10 +669,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sadness.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="106" column="60" lean-forward="false" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Joy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="156" column="46" lean-forward="true" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+        <state relative-caret-position="152">
+          <caret line="226" column="50" lean-forward="true" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
           <folding />
         </state>
       </provider>

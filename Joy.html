@@ -113,12 +113,10 @@
 
         //tremble effect
         function tremble() {
+            //prevent player from clicking on the chocolate
             chocolate.interactive = false;
             chocolate.buttonMode = false;
             count++;
-            //prevent player from clicking on the chocolate
-            chocolate.buttonMode = false;
-            chocolate.interactive = false;
             //play giggling
             var soundNum = Math.floor(Math.random() * 9);
             const sound = new PIXI.sound.Sound.from(soundSrc[soundNum]);
