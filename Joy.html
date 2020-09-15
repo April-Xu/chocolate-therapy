@@ -153,6 +153,8 @@
             }
 
             timer = setInterval(function(){
+                chocolate.buttonMode = false;
+                chocolate.interactive = false;
                 for (i=0; i<slices.length; i++) {
                     slices[i].y+=50;
                 }
