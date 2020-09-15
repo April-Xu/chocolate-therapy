@@ -27,8 +27,13 @@
       <file leaf-file-name="Joy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Joy.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="90">
               <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+=======
+            <state relative-caret-position="413">
+              <caret line="156" column="46" lean-forward="true" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+>>>>>>> parent of 9c6a6a0... debug
               <folding />
             </state>
           </provider>
@@ -37,8 +42,13 @@
       <file leaf-file-name="Sadness.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sadness.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="225">
               <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+=======
+            <state relative-caret-position="1065">
+              <caret line="71" column="19" lean-forward="false" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+>>>>>>> parent of 9c6a6a0... debug
               <folding />
             </state>
           </provider>
@@ -107,6 +117,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>cat</find>
       <find>contain</find>
       <find>rect</find>
       <find>0.5</find>
@@ -135,8 +146,11 @@
       <find>restart</find>
       <find>firstclick</find>
       <find>slice</find>
+<<<<<<< HEAD
       <find>on('c</find>
       <find>sound</find>
+=======
+>>>>>>> parent of 9c6a6a0... debug
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -281,13 +295,21 @@
       <workItem from="1586217136819" duration="11345000" />
       <workItem from="1587177418686" duration="73000" />
       <workItem from="1588180089815" duration="25000" />
+<<<<<<< HEAD
       <workItem from="1600144656354" duration="949000" />
       <workItem from="1600146075622" duration="328000" />
+=======
+      <workItem from="1600144656354" duration="161000" />
+>>>>>>> parent of 9c6a6a0... debug
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="96517000" />
+=======
+    <option name="totallyTimeSpent" value="95401000" />
+>>>>>>> parent of 9c6a6a0... debug
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -630,7 +652,27 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Sadness.html">
+=======
+    <entry file="file://$PROJECT_DIR$/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sadness.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="19" lean-forward="false" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Anticipation.html">
+>>>>>>> parent of 9c6a6a0... debug
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
@@ -670,6 +712,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -690,6 +733,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/Joy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="156" column="46" lean-forward="true" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+>>>>>>> parent of 9c6a6a0... debug
           <folding />
         </state>
       </provider>
